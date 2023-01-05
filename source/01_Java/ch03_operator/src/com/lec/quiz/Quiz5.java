@@ -15,6 +15,5 @@ public class Quiz5 {
 		double avg = (double)tot / 3; // double avg = sum/3.;
 		System.out.printf("ÃÑÁ¡: %d, Æò±Õ: %.2f\n", tot, avg );
 		sc.close();
-
-}
+	}
 }

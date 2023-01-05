@@ -9,5 +9,5 @@ public class Quiz2 {
 		int num = sc.nextInt();
 		System.out.println((num%2==0 ? "입력하신 수는 짝수입니다" : "입력하신 수는 홀수입니다"));
 		sc.close();
-}
+	}
 }
