@@ -13,7 +13,6 @@ package com.lec.loop;
 				}
 				tot += i;
 		}
-			System.out.println(tot);
+		System.out.println(tot);
 	}
-		
 }

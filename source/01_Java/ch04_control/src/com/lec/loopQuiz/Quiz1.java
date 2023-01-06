@@ -12,6 +12,6 @@ public class Quiz1 {
 			}
 			tot *= i;
 			}
-			System.out.println(tot);
+		System.out.println(tot);
 	}
 }

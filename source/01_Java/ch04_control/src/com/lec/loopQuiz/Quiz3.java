@@ -8,9 +8,8 @@ public class Quiz3 {
 		System.out.print("1~9까지 숫자를 입력해 주세요 : ");
 		int dansu = sc.nextInt();
 		for(int i=1 ; i<10 ; i++) {
-			System.out.println(dansu+"*"+i+"="+(dansu*1));
+			System.out.println(dansu+"*"+i+"="+(dansu*i));
 		}
 		sc.close();
-		
 	}
 }

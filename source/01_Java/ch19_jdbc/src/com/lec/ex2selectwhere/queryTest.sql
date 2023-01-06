@@ -1,0 +1,9 @@
+-- Ex1. 부서번호 받고 부서정보 출력하기
+SELECT * FROM EMP WHERE DEPTNO=40;
+-- Ex2. 부서번호 받고 부서정보와 사원정보 출력
+SELECT E.EMPNO, E.ENAME, E.SAL, M.ENAME MANAGER
+			    FROM EMP E, EMP M
+			    WHERE E.MGR=M.EMPNO AND M.DEPTNO=40;
+-- Ex3. 
+SELECT * FROM DEPT WHERE DNAME=UPPER('sales');
+-- Ex4. 

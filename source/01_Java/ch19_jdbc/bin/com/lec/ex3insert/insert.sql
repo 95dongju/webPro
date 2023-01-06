@@ -1,0 +1,2 @@
+-- 1
+INSERT INTO DEPT VALUES (50, 'IT', 'SEOUL');

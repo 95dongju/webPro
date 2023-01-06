@@ -8,7 +8,7 @@ public class Quiz1 {
 			System.out.print(arr[i]);
 			if(i<arr.length) {
 				System.out.print(" + ");
-			}else if(i>arr.length+1) {
+			}else if(i>arr.length) {
 				System.out.print(" = ");
 			}
 			tot += arr[i];
