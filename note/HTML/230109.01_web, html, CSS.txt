@@ -1,0 +1,31 @@
+230109 [1] Web, html, CSS
+
+1. Web이란?
+(1) 거미줄이란 뜻으로 하나의 사이트 또는 다른 사이트와의 관계가 거미집처럼 복잡하게 얽혀 있는 것에 비유함
+
+WWW(World Wide Web):
+월드와이드 웹은 인터넷에 연결된 컴퓨터를 통해 사람들이 정보를 공유할 수 있는 정보공간. 인터넷은 전세계를 연결하고 있는 국제 정보통신망이고 웹은 그 위에 작동하는 서비스(기능)
+
+(2) 1개 이상의 사이트가 연결되어 있는 인터넷 서비스의 한가지 형태
+	- 프로토콜: 네트워크 상에서 약속한 통신규약 
+	  http: HyperText Transfer Protocol 정보를 가져와 브라우저 화면상에서 봄
+	  FTP: File Transfer Protocol. 파일을 다운
+	  SMTP, POP: 메일 송수신 protocol
+	  DHCP: Dynamic Host Configuration Protocol 다이나믹하게 계속 사설 ip 분배해주는 하여 Web을 사용하도록 하는 protocol
+	- IP : 네트워크상에서 컴퓨터를 식별할 수 있는 주소
+	- DNS : IP주소를 인간이 쉽게 외우도록 맵핑한 문자열
+	- Port : IP주소가 컴퓨터를 식별할 수 있게 해준다면, Port번호는 해당컴퓨터의 구동되고 있는 프로그램을 구분할 수 있는 번호
+
+2. HTML이란?
+	- HTML이란, Hyper Text Markup Language의 약자로서 웹문서를 기술하는 언어
+	- 웹문서를 표현하기 위해 태그들로 구성되어 있음
+
+3. CSS
+	- Cascading Style Sheets의 약자로, HTML문서를 디자인적으로 예쁘게 만들어 정보 전달을 좀더 효율적으로 하기 위해 만들어진 문서 입니다.
+	- HTML은 정보를 가지고 있고, CSS는 화면상의 레이아웃등의 디자인을 컨트롤하는 문서라고 생각 하면 됩니다.
+
+4. JavaScript -> jQuery
+	- 동적인 내용
+	- html, css, java script는 client단 / 서버단 PG은 java (DB에 연결하거나 상황에 따라 달리 작동)
+cf) Ajax는 웹 페이지의 특정 부분(특정 태그 부분)를 업데이트하고 서버와 데이터를 교환하는 기술
+
