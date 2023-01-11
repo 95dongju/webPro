@@ -21,8 +21,8 @@ WWW(World Wide Web):
 	- 웹문서를 표현하기 위해 태그들로 구성되어 있음
 
 3. CSS
-	- Cascading Style Sheets의 약자로, HTML문서를 디자인적으로 예쁘게 만들어 정보 전달을 좀더 효율적으로 하기 위해 만들어진 문서 입니다.
-	- HTML은 정보를 가지고 있고, CSS는 화면상의 레이아웃등의 디자인을 컨트롤하는 문서라고 생각 하면 됩니다.
+	- Cascading Style Sheets의 약자로, HTML문서를 디자인적으로 예쁘게 만들어 정보 전달을 좀 더 효율적으로 하기 위해 만들어진 문서
+	- HTML은 정보를 가지고 있고, CSS는 화면상의 레이아웃 등의 디자인을 컨트롤하는 문서
 
 4. JavaScript -> jQuery
 	- 동적인 내용

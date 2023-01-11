@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        td{text-align:center;
+           padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    닉 네 임 <input type="text" name="nickname" />
+    <!-- 위의 닉네임처럼 form태그 바깥에 있으면 파라미터 전달이 안 됨 오직 form태그 안의 파라미터만 전달함-->
+    <form action="http://www.naver.com" method="post">
+        <!--       form 태그 method는 기본이 get방식
+                    method를 get으로 하면 속도는 빠르지만, 아이디, 비밀번호가 보임
+                    post 방식으로 하면 내가 입력한 내용 알 수 없기 때문에 계정정보 입력할 때 사용
+                    비밀번호 <input type="password" /><br />
+                    ^ 위처럼 name을 입력하지 않으면 action으로 전달이 안됨
+            -->
+        아 이 디 <input type="text" name="uid" /><br />
+        비밀번호 <input type="password" name="upw" /><br />
+        <input type="submit" value="로그인" />
+    </form>
+
+    <form action="#" method="get">
+        <table>
+            <tr>
+                <th>아이디</th><td><input type="text" name="uid" /></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th><td><input type="password" name="upw" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="로그인" /></td>
+            </tr>
+        </table>
+</body>
+</html>
