@@ -1,0 +1,20 @@
+﻿tr {
+    text-align: center;
+}
+strong {
+    color:red;
+}
+h1 {
+    text-align:center;
+}
+hr {
+    margin: 40px 0px;
+    color:grey;
+}
+footer {
+    text-align:center;
+    color:grey;
+}
+footer p {
+    margin: 0px;
+}

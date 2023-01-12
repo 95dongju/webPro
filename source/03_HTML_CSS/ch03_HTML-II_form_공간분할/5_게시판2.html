@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        tr {border-top: 1px solid green;
+            border-bottom: 1px solid green;
+        }
+    </style>
+    <script>
+        function chk() {
+//            alert(frm.title.value);     // input 상자에 인서트 한 것은 value라는 속성으로 입력됨
+//            return false;               // 리턴값이 false면 submit이 안 됨
+            // submit 이벤트 수용 조건: frm.title.value.length>0 (0글자 이상이어야 submit 가능)
+            // submit 이벤트 안 되게 : frm.title.value.length==0와 같이 title에 입력하지 않았거나, name에 두글자 미만 입력
+           if (frm.name.value.length < 2) {
+                alert('작성자명은 2글자 이상 입력하세요');
+                frm.name.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+                <!-- 유효성 검사 2가지 방법: (1)태그유효성검사, (2)javaScript 유효성검사, 
+                    (1)이 우선순위가 더 높기 때문에 (2) (1)일 경우 (1)부터 유효성검사 함. 통일하는 게 좋음 -->
+    <form action="" name="frm" onsubmit="return chk()" method="get">
+        <!-- 유효성 검사를 위해서는 form에 이름 반드시 지정, onsubmit에 리턴값이 true면 submit, false면 submit 하지 않는 함수 -->
+        <table>
+            <caption><h2>게시판</h2></caption>
+            <tr>
+                <td>작성자</td>
+                <td><input type="text" name="name" size="30"/></td>
+            </tr>
+            <tr>    
+                <td>제목</td>
+                <td><input type="text" name="title" size="30" required="required"/></td>
+                <!-- required는 스페이스 입력해도 입력한 것으로 여김 -->
+            </tr>
+            <tr>
+                <td>본문</td>
+                <td><textarea name="content" cols="30" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td>첨부파일</td>
+                <td><input type="file" name="filename" /></td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" value="글쓰기" />
+                    <input type="reset" value="초기화" />
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
