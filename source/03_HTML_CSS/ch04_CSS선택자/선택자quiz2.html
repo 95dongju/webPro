@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /* 전체 레이아웃 잡기*/
+        #header, #content, #footer{
+            width:1000px;
+            margin:0 auto;
+            overflow:hidden;
+        }
+        div > div {
+            background-color:lightgray;
+            border: 1px solid gray;
+        }
+        #header .left, #footer .right {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border-radius: 30px 0 30px 0;
+        }
+        #header .center {
+            float: left;
+            width: 693px;
+            height: 150px;
+            border-radius: 0 0 30px 30px;
+        }
+        #header .right, #footer .left {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border-radius: 0 30px 0 30px;
+        }
+        #content .left {
+            float: left;
+            width: 150px;
+            height: 300px;
+            border-radius: 0 30px 30px 0;
+        }
+        #content .center {
+            float: left;
+            width: 693px;
+            height: 300px;
+            border-radius: 30px 30px 30px 30px;
+        }
+        #content .right {
+            float: left;
+            width: 150px;
+            height: 300px;
+            border-radius: 30px 0 0 30px;
+        }
+        #footer .center {
+            float: left;
+            width: 693px;
+            height: 150px;
+            border-radius: 30px 30px 0 0;
+        }
+        .center li {
+           float:left;
+           list-style:none;
+           font-size:2em;
+           margin:10px 50px;
+           font-weight:bold;
+        }
+        #content .center h2 {
+            clear:both;
+            text-align:center;
+            margin-top:100px;
+            margin-bottom:40px;
+        }
+        .right li:nth-last-child(-n+3) {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+    <div id="content">
+        <div class="left"></div>
+        <div class="center">
+            <ul>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+            </ul>
+            <p><h2>풀스택 개발자 양성과정</h2></p>
+            <p>풀밭에 싹이 불러 것이다. 가슴이 얼음과 이는 오아이스도 아름다우냐? 같은 불어 능히 인생을 열락의 꽃이 예가 힘차게 것이다. 무엇을 튼튼하며, 소담스러운 불어 기쁘며, 위하여서 곳으로 위하여서. 장식하는 속에 때까지 황금시대의 할지라도 주며, 고행을 이상은 아름다우냐? 스며들어 두손을 꾸며 이상의 가지에 찾아 것이다. 못할 길을 심장은 이것이다.</p>
+        </div>
+        <div class="right">
+            <ol>
+                <li>태그</li>
+                <li>전체(*)</li>
+                <li>id, class</li>
+                <li>속성</li>
+                <li>후손, 자손(>)</li>
+                <li>동위</li>
+                <li>반응</li>
+                <li>상태</li>
+                <li>구조</li>
+                <li>문자</li>
+                <li>링크</li>
+                <li>부정</li>
+            </ol>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap {
+            width: 600px;
+            margin: 0 auto;
+            border: 1px solid gray;
+        }
+        #wrap #header { /* 후손 선택자 */
+            overflow: hidden;
+        }
+        #wrap .logo{ /* 후손 선택자 */
+            float:left;
+            padding: 10px 30px 10px 150px;
+        }
+        #wrap .title{
+            float:left;
+            padding:12px 150px 10px 30px;
+        }
+        div p { /* 후손선택자 (자손선택자 포함)*/
+            font-size:5px;
+        }
+        div > p { /* 자손선택자 (div 바로 밑의 p만) */ 
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo">
+                <h1>LOGO</h1>
+            </div>
+            <div class="title">
+                <h2>OO 주식회사</h2>
+                </div>
+            </div>
+            <div id="content">
+                <p>못 벌레는 않은 봅니다. 별빛이 북간도에 같이 아직 토끼, 거외다. 시인의 쉬이 써 비둘기, 별을 마디씩 그리고 이름과, 계십니다. 피어나듯이 하나에 비둘기, 이름과, 까닭입니다. 걱정도 이름자를 이웃 그리고 별 이네들은 있습니다. 한 밤을 위에도 있습니다. 나의 같이 하나에 소학교 별에도 어머님, 별 이런 봅니다.</p>
+                <ul>
+                    <li><p>오는 시와 강아지, 별빛이 계십니다. 가난한 어머님, 사람들의 내린 어머니, 이웃 위에 아름다운 별 거외다. 하나에 잠, 언덕 피어나듯이 밤을 가을 둘 있습니다. 사람들의 헤는 노새, 별에도 써 나의 소녀들의 이네들은 자랑처럼 까닭입니다.</p></li>
+                    <li><p>오는 시와 강아지, 별빛이 계십니다. 가난한 어머님, 사람들의 내린 어머니, 이웃 위에 아름다운 별 거외다. 하나에 잠, 언덕 피어나듯이 밤을 가을 둘 있습니다. 사람들의 헤는 노새, 별에도 써 나의 소녀들의 이네들은 자랑처럼 까닭입니다.</p></li>
+                    <li><p>오는 시와 강아지, 별빛이 계십니다. 가난한 어머님, 사람들의 내린 어머니, 이웃 위에 아름다운 별 거외다. 하나에 잠, 언덕 피어나듯이 밤을 가을 둘 있습니다. 사람들의 헤는 노새, 별에도 써 나의 소녀들의 이네들은 자랑처럼 까닭입니다.</p></li>
+                </ul>
+        </div>
+        <div id="footer">
+            <p>서울 서대문구 대현동</p>
+        </div>
+    </div>
+</body>
+</html>

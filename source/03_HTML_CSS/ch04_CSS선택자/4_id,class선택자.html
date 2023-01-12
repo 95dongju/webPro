@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {border:1px solid gray;}
+
+        /* 아이디 선택자 앞에는 반드시 #을 붙여야 함*/
+        #header {
+            width:600px; /* div에서 지정된 값을 따르기 때문에 반드시 width를 설정해 줘야 함*/
+            margin: 0 auto;
+            background-color:lightyellow;
+            text-align: center; /* 글씨 가운데 정렬 (수평) */
+            text-decoration: underline; /* 밑줄 */
+        }
+        #wrap {
+            width: 600px;
+            margin: 0 auto;
+            background-color: lightblue;
+            overflow:hidden; /* (1) 부모단에 overflow:hidden*/
+        }
+        #wrap #content {
+            float:left;
+            width:350px; /* content 영역 = 가로 (350px) + div border (오른쪽/왼쪽 2px) = 352px */
+            height:300px;
+            text-align:center;
+        }
+        #wrap #side_banner {
+            float:left;
+            width:246px;
+            height:300px;
+            text-align:center;
+        }
+        /* 클래스 선택자 앞에는 반드시 .을 붙여야 함 */
+        /* 클래스가 어떤 영역 안에 있는지 기재해 주는 것이 좋음 */
+        #wrap #content ul li.menuodd {
+            font-size:1.5em; /* em은 원래 글씨크기보다 n만큼 곱해줌 */
+        }
+        .menueven {
+            font-weight:bold;
+        }
+        .menueven, .menuodd {
+            color:darkblue;
+        }
+        #wrap #side_banner img {
+            width:150px;
+        }
+        #footer {
+            clear:both;
+            width:600px;
+            margin:0 auto;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>HEADER</h1>
+    </div>
+    <div id="wrap">
+        <div id="content">
+            <h2>content</h2>
+            <ul>
+                <li class="menuodd">menu1</li>
+                <li class="menueven menu2">menu2</li> <!-- 아이디는 아이디 이름 하나만 지정, 클래스는 아이디 이름 여러 개 지정 가능-->
+                <li class="menuodd">menu3</li>
+                <li class="menueven">menu4</li> <!-- 아이디는 반드시 unique 해야 하지만, class는 중복되어도 됨 -->
+                <li class="menuodd">menu5</li>
+            </ul>
+        </div>
+        <div id="side_banner">
+            <h2>BANNER</h2>
+            <a href="http://www.daum.net">
+                <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png"
+                     alt="다음로고" />
+            </a>
+        </div>
+    </div>
+    <div id="footer">
+        <h1>FOOTER</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+230112 [4] CSS선택자
+
+1. 선택자:
+HTML 문서 중 특정 부분을 선택하여, 해당 부분의 속성을 설정하는 목적으로 사용
+
+
+(1) Tag 선택자: 특정 태그를 선택하여 CSS 속성 설정
+ex)
+	p {color:chocolate;}
+
+
+(2) * 선택자: 문서 전체를 선택해서 CSS 속성 설정
+ex)
+	* {margin:0;}
+
+
+(3) id(#)와 class(.) : 태그의 아이디와 클래스를 이용하여 CSS 속성 설정
+- id는 #, class는 .
+ex)
+	#header{ width:600px; margin:0 auto; }
+	.menu1 { font-size: 1.5em; }
+
+
+(4) tad, id, class: 태그, 아이디, 클래스를 혼합하여 CSS 속성 설정
+-  클래스의 경우 앞을 반드시 띄워서 사용 (ex) li .menu1
+ex)
+	li .menu2{ font-weight:bold; }
+
+
+(5) 속성 선택자: tag의 속성을 선택하여 CSS 속성 설정
+ⓐ선택자[속성] : 지정한 속성을 가지고 있는 요소를 찾아 스타일을 적용
+ⓑ선택자[속성=값] : 속성 값이 특정값과 같은 경우를 찾아 스타일을 적용
+ⓒ선택자[속성^=값] : 속성 값이 지정한 문자로 시작하는 속성값에 대해서만 스타일을 적용
+ⓓ선택자[속성$=값] : 속성 값이 지정한 문자로 끝나는 속성에 대해서만 스타일을 적용
+ex)
+	input[type^='te']{color:orange;  }
+
+
+(6) 후손 및 자손 석택자: tag의 속성을 선택하여 CSS 속성 설정
+- 후손의 경우 띄어쓰기, 자손의 경우 '>'
+ex)
+	후손: div li{background-color:red;}
+	자손: div > p{color:blue;}
+
+
+(7) 동위 선택자: 동등한 위치를 판단하여 CSS 속성 설정
+- '+': 하나 선택, '~': 모두 선택
+ex)
+	h3태그의 동위 선택자들 모두: h3 ~ div {font-size:1.3em;}
+	h3태그의 동위 선택자를 중 바로 다음에 오는 것:  h3 + div{color:red;}
+
+
+(8) 반응 선택자: 마우스를 올려 놓았을 때 (hover상태) 반응을 CSS 속성 설정
+ex)
+	li:hover{ color:pink; }
+
+
+(9) 상태 선택자: 상태에 따라 CSS 속성 설정
+ex) input 태그의 경우 focus가 맞춰졌을 때
+
+	input:focus{ border:1px dashed red;}
+	input:disabled{color:blue;}
+	input:enabled{color:green;}
+
+
+(10) 구조 선택자: 구조에 따라 CSS 속성 설정
+ex)
+	홀수번째: #wrap ul li:nth-child(2n+1){background-color:orange;}
+	짝수번째: #wrap ul li:nth-child(2n){background-color:yellow;}
+	첫번째: li:first-child
+	마지막: li:last-child
