@@ -1,0 +1,125 @@
+230113 [5] CSS속성들
+
+
+(1) CSS3단위: em, px, % ...
+ex)
+	{font-size:1em;}
+	{font-size:16px;}
+	{font-size:100%;}
+	{font-size:200%;}
+	{font-size:3em;}
+
+
+
+(2) url(): 
+font, background-img 속성의 속성값으로 많이 사용됨 (폰트, 배경 이미지의 경로를 나타냄)
+ex)
+        @font-face {
+            font-family: 'Sunflower-Bold';
+            src: url('Sunflower-Bold.ttf'); }
+        * { font-family: 'Sunflower-Bold'; }
+
+        #content{ background-image:url('sulhyun.jpg'); 
+
+
+
+
+(3)background-image: 배경 지정하는 속성
+ex)
+	#content{ background-image:url('sulhyun.jpg'); 
+	div:nth-child(1){ background-position: left top; } 
+	div:nth-child(3){ background-position:right top; } 
+	div:nth-child(7){ background-position:center; }
+	div:nth-child(9){ background-position:50%; }
+	div:nth-child(11){background-size:50%;
+	background-repeat:repeat-x; 
+
+
+
+(4) display: 화면에 어떻게 보이는지 설정하는 속성. 주로 아래의 속성값을 사용함.
+    a. block: div 태그 p 태그 li 태그 - 높이 속성 있음
+    b. inline: span 태그 - 높이 속성 없음
+    c. inline-block: block 속성을 가지고 옆으로 붙일 수 있음 - 높이 속성 있음
+ex)
+	div:nth-child(5){display:none; }
+	div:nth-child(6){display:inline; }
+	div:nth-child(7){display:inline-block; }
+
+
+
+(5) visibility: 
+    a. visibility: hidden 공간은 확보하지만 화면에 보이지 않음
+    b. display:none 공간을 확보하지 않고 화면에 보이지 않음
+
+
+
+(6) opacity: 투명도 속성
+ex)
+	ul li:nth-child(2){opacity:0.5;}
+
+
+
+(7) margin 및 padding
+- 상 우 좌 하 순서로 적용되며, 값을 하나만 입력하면 전체 적용
+
+
+
+(8) box-sixing: 전체 사이즈의 크기를 변경할 수 있음
+ex)
+	적용된 보더를 박스 안으로: div:nth-child(2){box-sizing: border-box;}
+	적용된 보더를 박스 밖으로: div:nth-child(4){box-sizing:content-box;}
+
+
+
+(9) border:
+ex) 
+	border-width:10px;
+              border-style: solid;
+              border-color: red;
+	border-bottom-style:dashed;
+              border-left-style:solid;
+              border-right-style:dotted;
+              border-top-style:double;
+              border-top: 5px solid blue;
+              border-bottom:5px solid red;
+              border-left:10px solid yellow;
+              border-right:10px solid black;
+              border-bottom-left-radius: 50px;
+              border-radius: 10px 10px 20px 20px;
+
+
+
+(10) 글자 속성:
+ex)
+	font-family(글꼴)
+	font-size(크기)
+	font-style(이텔릭체)
+	font-weight(진하게)
+	line-height(행간격 조정용도나 세로축에 대한 정렬 용도)
+	text-align(글자에 대한 정렬)
+	text-decoration(간단한 글꼴 모양의 속성) 
+
+* 가운데 정렬: 
+	text-align:center;
+	line-height:300px; 
+
+
+
+(11) position:
+ex)
+    a. absolute: 절대적인 기준점 = 절대 좌표
+    b. fixed: 스크롤 시 화면상에서 움직이지 않고 fixed 됨
+    c. static: position 미설정시 default값, 블록 형태로 쌓아감 (top과 left가 의미가 없음)
+    d. relative: 기존 위치에서 상대적으로 위치를 잡을 수 있음
+
+
+
+(12) float: position 속성처럼 요소의 위치를 설정하기 위한 속성
+ex) 
+	왼쪽으로 붙임: float: left;
+	오른쪽으로 붙임: float: right;
+
+
+
+(13) gradient: 2가지 이상의 색을 표현할 때 사용
+http://www.colorzilla.com/gradient-editor/에서 제공되는 소스를 이용함

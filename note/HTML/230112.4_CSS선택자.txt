@@ -69,3 +69,15 @@ ex)
 	짝수번째: #wrap ul li:nth-child(2n){background-color:yellow;}
 	첫번째: li:first-child
 	마지막: li:last-child
+
+
+(11) 문자 선택자: 
+ex)
+	3번째 P태그의 첫번째 라인: #content p:nth-child(3)::first-line { color: blue; }
+	2번째 p태그의 첫번째 글자: #content p:nth-child(2)::first-letter { font-size: 2em;}
+	문자 선택자를 모를 경우 span 사용하여 지정: #content p:nth-child(3) span { font-size: 2em;}
+
+
+(12) 링크 선택자: 문서에 링크(href) 되어 있는 문자를 선택하여 CSS 속성 설정
+ex) 
+	앵커 태그 뒤에 링크: #content a:after{content: ' - ' attr(href);}

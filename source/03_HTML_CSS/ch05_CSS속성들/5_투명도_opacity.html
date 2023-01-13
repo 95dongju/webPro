@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul li{
+            list-style:none;
+            width:200px; height:100px;
+            background-color:red;
+            display:inline-block;
+        }
+        ul li:nth-child(1) {
+            opacity:1; /* default, 투명도 없음 */
+        }
+        ul li:nth-child(2) {
+            opacity:0.6; /* opacity 속성값: 0 ~ 1 사이 (0: 투명 / 1: 불투명) */
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>우리 나라 만세</li>
+        <li>우리 나라 만세</li>
+        <li>우리 나라 만세</li>
+    </ul>
+</body>
+</html>
