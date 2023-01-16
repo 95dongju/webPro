@@ -1,0 +1,153 @@
+/***** 페이지 초기화 *****/
+@font-face {
+    font-family: 'Anton-Regular';
+    src: url('../font/Anton-Regular.ttf'); /* 폴더는 html 기준으로 */
+}
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Anton-Regular';
+
+}
+a {
+    text-decoration: none;
+    color:black;
+}
+li {
+    list-style: none;
+}
+header .gnb {
+    width:100%;
+    background-color: black;
+}
+header .gnb ul {
+    width:1000px;
+    margin: 0 auto;
+    overflow:hidden;
+    height: 30px;
+    line-height:30px;
+}
+header .gnb ul li {
+    float:left;
+    width: 80px;
+    text-align: center;
+    margin: 0 10px;
+}
+header .gnb ul li a {
+    color:white;
+    display: block;
+}
+header .logo {
+    margin: 30px auto;
+    width:200px;
+    height:100px;
+    border: 1px solid lightgray;
+    line-height: 100px;
+    text-align: center;
+    font-size:2em;
+}
+header .hitmenu ul {
+    width: 1000px;
+    margin: 0 auto 3px;
+    overflow: hidden;
+}
+header .hitmenu ul li {
+    border: 1px solid gray;
+    float:right;
+}
+header .hitmenu ul li a {
+    display: block;
+    padding: 10px 30px;
+}
+header .hitmenu ul li:last-child {
+    border-radius: 10px 0 0 10px;
+}
+header .hitmenu ul li:first-child {
+    border-radius: 0  10px 10px 0;
+}
+header .lnb {
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+}
+header .lnb ul{
+    width:1000px;
+    margin:0 auto;
+    overflow: hidden;
+}
+header .lnb ul li{
+    float:left;
+    width:10%;
+    margin:0 1.25%;
+    text-align: center;
+    height:30px;
+    line-height:30px;
+}
+#content {
+    width:1000px;
+    margin:0 auto;
+}
+#content .section1{
+    overflow: hidden;
+}
+#content .slide_banner {
+    border: 1px solid gray;
+    box-sizing: border-box;
+    width:700px;
+    height:400px;
+    float:left;
+}
+#content .side_banner {
+    float:right;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    width:300px;
+    height:400px;
+}
+#content .section2 .hit_product {
+    margin: 10px auto;
+
+}
+#content .section2 .hit_product, 
+.md_product {
+    border: 1px solid gray;
+}
+#content .section2 .hit_product ul, 
+.md_product ul li {
+    overflow: hidden;
+}
+#content .section2 .hit_product ul li,
+#content .section2 .md_product ul li{
+    float: left;
+    height: 400px; line-height: 400px; text-align: center;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    width:240.7px; 
+    margin-right: 7px;
+}
+#content .section2 .hit_product ul li:first-child,
+#content .section2 .md_product ul li:first-child{
+    margin-left: 7px;
+}
+/* * * * * * * footer * * * * * */
+footer{
+    width:1000px; margin: 5px auto;
+    height: 150px;
+    overflow: hidden;
+}
+footer div:nth-child(1),
+footer div:nth-child(2),
+footer div:nth-child(3){
+    float: left; 
+    width:33.33%; 
+    height: 100px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+footer div:last-child{
+    clear:both;
+    height: 50px; 
+    line-height: 50px; 
+    text-align: center;
+    background-color: black;
+    color:white;
+}
