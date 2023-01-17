@@ -1,0 +1,15 @@
+@font-face{
+    font-family: 'Anton-Regular';
+    src:url('../font/Anton-Regular.ttf');
+}
+* {
+    margin:0;
+    padding:0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color:black;
+}

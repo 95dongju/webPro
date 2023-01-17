@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Amarante-Regular';
+    src: url('../font/Amarante-Regular.ttf');
+}
+* {
+    margin:0;
+    padding:0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color:black;
+}
+header #header_nav {
+    min-width: 900px;
+    background-color: #2d1152;
+    overflow: hidden;
+    line-height: 25px;
+}
+header #header_nav .gnb {
+    width:600px;
+    margin:0 auto;
+    margin-left:10px;
+}
+header #header_nav .gnb ul li {
+    float:left;
+}
+header #header_nav .gnb ul li a {
+    color:white;
+    display: block;
+    padding:0 5px;
+}
+header #header_nav .survivalFootball p {
+    float:right;
+}
+header #header_nav .survivalFootball img {
+    width:16px;
+    padding:5px;
+}

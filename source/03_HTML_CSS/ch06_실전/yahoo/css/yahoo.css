@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'Amarante-Regular';
+    src: url('../font/Amarante-Regular.ttf');
+}
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Amarante-Regular';
+}
+a {
+    color:black;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+header #header_nav {
+    min-width: 800px; /* 최소한의 가로사이즈 */
+    height: 25px;
+    line-height: 25px;
+    background-color: #2d1152;
+    font-size:0.9em;
+    overflow: hidden;
+}
+header #header_nav .gnb, header #header_nav .survivalFootball {
+    width:1000px;
+    margin:0 auto;
+}
+header #header_nav .gnb ul li{
+    float: left;
+}
+header #header_nav .gnb ul li a{
+    color: white;
+    display: block;
+    padding: 0 5px;
+}
+
+header #header_nav .survivalFootball p{
+    color: white;
+    float: right;
+}
+header #header_nav .survivalFootball img{
+    float: right;
+    padding: 2px 5px;
+    width:20px;
+    height:20px;
+}
+header #header_info {
+    width: 1000px;
+    height:50px;
+    margin:20px auto;
+    overflow: hidden;
+    line-height: 50px;
+}
+header #header_info .logo, .search, .service {
+    float:left;
+    margin-left:35px;
+}
+header #header_info .search form input:nth-child(1) {
+    width: 400px;
+    height:30px;
+    border: 1px solid blue;
+}
+header #header_info .search form input:nth-child(2) {
+    color:white;
+    background: url(../img/search_btn.png) no-repeat;
+    height: 40px;
+    width:100px;
+    text-align: center;
+    border:0;
+}
+header #header_info .service ul li {
+    float:left;
+}
+header #header_info .service ul li a {
+    display: block;
+    padding:0 10px;
+}
+#content {
+    width:1000px;
+    margin:0 auto;
+    overflow: hidden;
+}
+#content #main_menu{
+    width:155px;
+    float:left;
+}
+#content #main_menu ul li{
+    text-align: center;
+    margin: 25px;
+}
+#content #main{
+    width:600px;
+    float:left;
+}
+
+#content #main ul li{
+    float:left;
+    margin: 0 auto;
+    text-align: center;
+}
+#content #main div{
+    height: 300px;
+    border:1px solid gray;
+    margin:3px;
+}
+#content #main div:nth-child(2){
+    height: 150px;
+}
+#content #main div:nth-child(3){
+    height: 50px;
+    background-color: #500095;
+} 
+#content #main div ul li{
+    line-height: 50px;
+    padding: 0 20px;
+} 
+#content #main div ul li a{
+    color: white;
+} 
+#content #main .main_topic{
+    height:100px;
+} 
+#content #main_banner{
+    float:left;
+}
+#content #main_banner div{
+    border:1px solid gray;
+    margin: 3px;
+    width: 230px;
+}
+#content #main_banner div:nth-child(1), 
+#content #main_banner div:nth-child(2){
+    height: 100px;
+}
+#content #main_banner div:nth-child(3), 
+#content #main_banner div:nth-child(4){
+    height: 150px;
+}
+#content #main_banner div:nth-child(5){
+    height: 200px;
+}
+footer {
+    width:700px;
+    margin: 0 auto;
+    height:100px;
+    overflow: hidden;
+}
+footer ul li {
+    float:left;
+}
