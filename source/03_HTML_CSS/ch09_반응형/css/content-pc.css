@@ -1,0 +1,7 @@
+/* pc 스크린용 */
+#wrap .content {
+    background-color: darkgreen;
+    color:wheat;
+    padding: 30px 10px;
+    text-align: justify;
+}
