@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 자료형: string, number, boolean, function, object(array), undefined
+        //'use strict'; // 이 파일은 strict 모드로 구현
+        var variable; // 선언만 하면 undefined 변수가 됨
+        // console.log(variable);
+        // 선언 없이도 할당은 가능함.
+        document.write("1. variable 타입 : "+typeof(variable) + '값: '+variable+'<br>');
+        variable = "이름은 '홍길동'입니다"; //문자 안에 ''가 있으면 ""로 감쌀 수 있고, ""가 있으면 ''로 감쌀 수 있음
+        document.write("2. variable 타입 : "+typeof(variable) + '값: '+variable+'<br>');
+        variable = 010; // 0 붙이면 8진수, xFF는 16진수
+        document.write("3. variable 타입 : "+typeof(variable) + '값: '+variable+'<br>');
+        variable = false;
+        document.write("4. variable 타입 : "+typeof(variable) + '값: '+variable+'<br>');
+        variable = function() { // 함수 할당
+            alert('함수 내용');
+        };
+        document.write("5. variable 타입 : "+typeof(variable) + '값: '+variable+'<br>');
+        // variable(); // 함수 호출
+
+        // js에서 객체 만드는 법, 객체는 {}
+        variable = {'name':'홍길동', 'age':'20'};
+        // document.write(variable.name);
+        document.write("6. variable 타입 : "+typeof(variable) + '값: '+variable+'<br>');
+        /* 
+        Java에서는 객체 만들 때 아래와 같이 만듬 
+        class Person {
+            private String name;
+            private int age;
+            매개변수 있는 생성자
+        }
+        Person variable = new Person("홍길동", 20);
+        variable.name은 홍길동 
+        */
+        variable = [10,'홍길동',function(){}, true, {name: '홍', age:30}, [1,2,3]]; // 배열은 [] 여러 가지 타입의 데이터를 넣을 수 있음
+        document.write("7. variable 타입 : "+typeof(variable) + '값: '+variable+'<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* body{
+            background-color: #FF0000;
+        } */
+    </style>
+    <script>
+        document.write('<h1>document.write</h1>');
+        var week = new Date().getDay(); // 0:일, 1:월, 2:화, 3:수, 4:목, 5:금, 6:토
+        switch(week) {
+            // case 0: document.body.innerHTML += '<h2>body.innerHTML</h2>'
+            case 0: document.body.style = 'background-color: #ff0000'; break;
+            case 1: document.body.style = 'background-color: orange'; break;
+            case 2: document.body.style = 'background-color: yellow'; break;
+            case 3: document.bgColor = 'green'; break;
+            case 4: document.bgColor = '#0000ff'; break;
+            case 5: document.bgColor = 'darkblue'; break;
+            case 6: document.bgColor = 'purple'; break;
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

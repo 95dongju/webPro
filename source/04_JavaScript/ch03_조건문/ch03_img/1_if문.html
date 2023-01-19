@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {width: 300px};
+    </style>
+    <script>
+        // const date = new Date();
+        // const hour = date.getHours(); // 시스템으로부터 date 객체를 받아 hour 가져옴
+        const hour = new Date().getHours(); // 한번에
+        if(hour < 12) {
+            document.write('오전 시간입니다 <br>');
+            document.write('<img src="../ch03_img/am.jpg" alt="am사진">');
+        }else {
+            document.write('오후 시간입니다 <br>');
+            document.write('<img src="../ch03_img/pm.jpg" alt="pm사진">');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
