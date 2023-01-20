@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        let answer;
+        let totCnt = 0, tot = 0, cnt = 0, cntMiss = 0;
+        do {
+            answer = confirm('수를 누적하겠습니까?');
+            if (answer) {
+                do {
+                    let num = parseInt(prompt('누적할 점수는?'));
+                    if (isNaN(num) || num<0 || num>100) {
+                        alert('1~100까지의 점수를 입력하세요');
+                        cntMiss ++;
+                        totCnt ++;
+                    } else {
+                        tot += num;
+                        cnt ++;
+                        totCnt ++;
+                    }
+                }while(prompt==false);
+            } else {
+                break;
+            }
+        }while(true);
+        if (totCnt==0) {
+            document.write('수를 입력하지 않으셨네요.');
+        } else {
+        document.write(totCnt+'번 입력<br>');
+        document.write('누적 점수: '+tot+'<br>');
+        document.write('점수를 제대로 입력한 횟수: '+cnt+'<br>');
+        document.write('점수를 잘못 입력한 횟수: '+cntMiss+'<br>');
+        }
+        // do {
+        //     if (answer) {
+        //         let num = parseInt(prompt('누적할 점수는?'));
+        //         if (!isNaN(num) || num>100 || num<0) {
+        //             alert('1~100까지의 점수를 입력하세요');
+        //         }
+        //     } else { 
+        //         document.write(totCnt+'번 입력<br>');
+        //         document.write('누적 점수: '+tot+'<br>');
+        //         document.write('점수를 제대로 입력한 횟수: '+cnt+'<br>');
+        //         document.write('점수를 잘못 입력한 횟수: '+cntMiss+'<br>');
+        //     }
+        // }while(true);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

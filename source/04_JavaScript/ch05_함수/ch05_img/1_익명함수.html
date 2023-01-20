@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // function chk() {
+        //     alert('chk함수');
+        // }
+        // chk(); // 함수 호출
+        
+        // 아래처럼 변수에 함수를 담아두는 것을 익명함수라고 함
+        var chk = function() {
+            alert('chk함수');
+        };
+
+        var i = 'hello';
+
+
+        // 익명 호출시에는 함수형 변수에 할당 후 변수를 통해 호출
+        var functionVar1 = function(i) { // 함수 표현식
+            alert('test'+i);
+        }; // 익명함수
+        functionVar1(); // 익명함수 호출은 변수의 이름에 ()를 붙여 호출
+
+
+        functionVar1 = (i) => { // 화살표 함수
+            alert('test'+i);
+        }
+
+
+        var functionVar2 = function(i, j) { // 함수 표현식
+            alert(i+'test'+j);
+        }; // 익명함수
+
+        
+        functionVar2(10,20);
+        document.write(i+'<br>');
+        document.write(functionVar1+'<br>');
+        document.write(functionVar2+'<br>');
+        document.write(typeof(functionVar2)+'<br>');
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 자바스크립트에서의 배열 방 크기는 가변적. 자료의 집합
+        var arr = [2, 4, 6, '홍길동'];
+        document.write('arr의 타입: ' +typeof(arr) + ' / 값: ' +arr+ '<br>');
+        document.writeln('arr 방 갯수: ' +arr.length +'<br>');
+        arr.push(8); // arr 4번(제일 끝)에 추가됨
+        arr.unshift(0); // arr 0번(제일 앞)에 추가
+        document.write('arr 추가 후 <hr> arr 타입: ' +typeof(arr) + ' / 값: ' +arr + '<br>');
+        document.writeln('arr 방 갯수: ' +arr.length+'<br>');
+        var value = arr.pop(); // 마지막 배열방의 값을 return 하고 삭제
+        document.write('arr에 삭제된 값 : ' +value+ '<br>');
+        document.write('arr 삭제 후 <hr> arr의 타입: ' +typeof(arr) + ' / 값:' +arr+ '<br>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

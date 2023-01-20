@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            margin:0 auto;
+        }
+        td {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        document.write('<table>');
+            document.write('<tr>');
+        for (var a=2; a<10; a++) {
+            document.write('<td>'+a+'단 </td>');
+        }    
+        document.write('</tr>');
+        for (var a=1; a<10; a++) {
+            document.write('<tr>');
+            for (var b=2; b<10; b++) {
+                document.write('<td>'+b+'*'+a+'='+(a*b)+' </td>');    
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

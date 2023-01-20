@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var arr = [273, 32, '홍길동'];
+
+        //1. 일반 for문
+        document.write('<h3>일반 for문 이용</h3>');
+        for(var idx=0 ; idx<arr.length ; idx++) {
+            document.write(idx+'번째 : '+arr[idx]+ '<br>');
+        }
+        //2. for-in문
+        document.write('<h3>for-in문</h3>');
+        for (var idx in arr) {
+            // idx에 인덱스가 카피가 됨
+            document.write(idx+'번째 : ' +arr[idx]+ '<br>');
+        }
+        /*
+        for(int data : arr) {
+            system.out.println(data) // idx 안의 data가 카피가 됨
+        }
+        */
+        // ^ Java 에서는 위와 같이 사용
+
+        //3. forEach함수1
+        document.write('<h3>forEach함수1</h3>');
+        // forEach함수에는 function이 들어감
+        // 배열명: arr / 데이터: 273, 32, '홍길동' / 인덱스: 0, 1, 2
+        arr.forEach(function(data, idx){
+            document.write(idx+ '번째 : ' +data+'<br>');
+        });
+
+        //4. forEach함수2 - 배열 반복시 index가 필요 없을 때
+        document.write('<h3>forEach함수2</h3>');
+        arr.forEach(function(data){ // 매개변수가 1개만 들어오면 idx가 undefined 됨
+            document.write(data+'<br>');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

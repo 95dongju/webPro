@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // Java --> int[] arr = {1,2,3}
+        // js에서는 객체 만들 때 {} 사용
+        var person = {'name':'홍길동', 'age':20}; // 변수 이름에 '' "" 붙이는 걸 추천
+        var array = [273, 'hello', true, function(){alert(1);}, [1,2,3]]; // == {'0':273, '1':'hello'}
+        document.write('array 배열 갯수 : ' +array.length+ '<br>');
+        document.write(0+ ':' +array[0]+'<br>');
+        document.write(1+ ':' +array[1]+'<br>');
+        document.write(2+ ':' +array[2]+'<br>');
+        document.write(3+ ':' +array[3]+'<br>');
+        document.write(4+ ':' +array[4]+'<br>');
+        // array[3](); 3번째 index의 함수 호출
+        var append = confirm('배열 추가할까요?');
+        if(append) {
+            var data = prompt('배열에 넣을 내용: ');
+            array.push(data);
+            document.write('추가 후 배열 갯수: ' +array.length+'<br>');
+            document.write(array.length-1+ ':' +array[array.length-1]+'<br>');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
