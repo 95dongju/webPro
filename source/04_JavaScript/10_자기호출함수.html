@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 다른 개발자의 로직에 영향을 주지 않기 위해 -> 내부함수, 자기호출함수
+        // let fun1 = function(){alert('자기호출함수');};
+        let fun = function (i) {
+            alert('자기호출함수' + i);
+        }
+        fun(1);
+        (function (i) {
+            alert('자기호출함수' + i);
+        })(); // 선언 후 실행하지 않아도 스스로 실행되는 함수
+
+        function pythagoras(width, height) {
+            
+        return Math.sqrt((function(x)
+                            {return x*x;
+                            })(width)+
+                            (function(x){
+                                return x*x;
+                            })(height));// 빗변길이 리턴
+        }
+        alert('빗변 : ' +pythagoras(3,4));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

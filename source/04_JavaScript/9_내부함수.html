@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script> // script A
+
+        function pythagoras(width, height) {
+            // 내부함수: 함수 내에 선언된 함수
+            // 충돌을 피하고자 사용함
+            function square(x){
+            return x*x;
+        }
+        return Math.sqrt(square(width)+square(height));// 빗변길이 리턴
+        }
+    </script>
+    <script> // script B
+        function square (w, h, hypotenuse){
+            return (w*w) + (h*h) === (hypotenuse*hypotenuse);// 직각삼각형 여부
+            if (w*w + h*h === hypotenuse*hypotenuse) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        alert('빗변의 길이 : ' + pythagoras(3,4));
+        alert('직각삼각형 여부 : ' +square(3,4,5));
+    </script>
+</body>
+</html>

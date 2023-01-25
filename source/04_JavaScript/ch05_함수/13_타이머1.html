@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        let id = setTimeout(function(){ // 일정 시간 후 함수를 한번 실행
+            alert('3초 후 실행'); 
+        }, 3000);
+        let cnt = 0;
+        nowTime = new Date().getTime(); // 현재의 밀리세컨
+        while (new Date().getTime() < nowTime + 2000) {
+            cnt++;
+        }
+        // clearTimeout(id); // 바로 중단
+        document.write('2초 동안 '+cnt+'번 while 반복 수행');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 클로저함수 : 함수를 return 하는 함수
+        function test(name){
+            let msg = 'Hello, ' + name + '님 반갑습니다';
+            return function() {alert(msg);}; 
+        }
+        let fun = test('홍길동');
+        fun();
+        test('신길동')(); // 리턴 받은 클로저 함수를 바로 실행
+    </script>
+</head>
+<body>
+
+</body>
+</html>

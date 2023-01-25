@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script> 
+        // 경고창 순서 : A C B
+        // alert('A');
+        // setTimeout(function(){alert('B');}, 0); // timeout은 브라우저 로드한 이후 0초 이후 수행
+        // alert('C');
+
+        // 브라우저 화면 : B
+        document.write('A');
+        // setTimeout(function(){
+        //     document.write('B');
+        // }, 0); // 이미 수행된 AC는 B로 덮어씌워짐
+        setTimeout(function(){
+            document.body.innerHTML += ('B');
+        }, 0); // document.body.innerHTML 기존 바디에 'B'를 더함
+        document.write('C');
+    </script>
+</head>
+<body>
+
+</body>
+</html>
