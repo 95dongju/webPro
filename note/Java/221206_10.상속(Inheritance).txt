@@ -1,0 +1,69 @@
+221206 [10] 상속 (Inheritance)
+
+1. 상속: 부모클래스가 가지고 있는 속성과 메소드를 활용할 수 있는 개념
+	(1) 기존의 클래스를 재사용해서 새로운 클래스를 작성하는 것
+	(2) 두 클래스를 부모와 자식 (조상과 자손)으로 관계를 맺어줄 수 있음
+ 	(3) 자손은 조상의 멤버를 상속 받지만, private 멤버는 직접 제어할 수 없음
+ 자손의 멤버 개수는 조상보다 작을 수 없음 (같거나 많음)
+ 	(4) 자바에서는 다중 상속이 지원되지 않음
+
+
+
+2. 상속 문법: 
+접근제어자 [final/abstrac] class 클래스 이름 extends 상위클래스 {
+	추가할 멤버변수 선언;
+	생성자;
+	추가할 메소드 선언;
+}
+
+
+
+3. 상속이 필요한 이유
+ (1) 상속을 통해 결과물을 빠른 시간 내에 만들 수 있음
+public class ChildClass extends ParentClass {
+	String cStr = "자식클래스";
+	public ChildClass() {System.out.println("자식클래스 객체 부분 생성");}
+}
+public class ChildClass extends ParentClass {
+	String cStr = "자식클래스";
+	public ChildClass() {System.out.println("자식클래스 객체 부분 생성");}
+}
+public static void main(String[] args) {
+		ChildClass child = new ChildClass();
+		child.getPapa();
+		child.getMami();
+		System.out.println(child.pStr);
+		System.out.println(child.cStr);
+}
+
+ (2) 다양한 객체(타입)를 상속을 통해 하나의 객체(타입)으로 묶을 수 있음
+  	<추상화>                                                <특수화>                 
+    	  생물       —>     동물     —>    조류, 포유류, 어류, 양서류
+　   	     　       —>     식물
+
+
+
+4. Object 클래스
+ 	(1) 모든 클래스의 최고 조상으로, 상속 계층도의 최상위에는 Object 클래스가 위치함
+ 	(2) 조상이 없는 클래스는 자동적으로 Object 클래스를 상속받게 됨 
+ 	(3) 모든 클래스는 Object 클래스에 정의된 11개의 메소드를 상속 받음 (`toString()`, `equals(Object obj)`, `hashCode()` …
+
+
+
+5. Override(재정의)의 이해
+: 부모 클래스의 메소드를 자식 클래스에서 재정의 하는 것.
+자식 클래스가 부모 클래스를 상속하여 자식에게 없는 메소드를 호출하면, 부모 클래스에서 해당 메소드를 찾게 됨.
+만약 부모 클래스의 메소드에서 자식 클래스와 동일한 이름으로 override를 하게 되면, 자식 클래스의 메소드를 호출하게 됨.
+
+
+
+6. Super 키워드
+: 부모를 찾는 키워드로 아래의 경우에 사용함
+
+	**(1) 하위 클래스에 의해 가려진 상위클래스의 멤버변수나 메소드에 접근할 때 사용**
+	자식 클래스에서 부모 클래스를 override 하게 되면 부모 클래스의 메소드를 사용할 수 없음.
+	자식 클래스에서 부모 클래스의 메소드를 사용하고자 할 때 super 키워드를 사용함.
+
+	**(2) 상위클래스의 생성자를 호출할 때**
+	super(매개변수); 해당 문장은 반드시 첫 번째 라인에 와야 함
+	super(); 매개변수 없는 슈퍼클래스의 생성자 호출

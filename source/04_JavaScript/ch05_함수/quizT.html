@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var i = 0;
+        var img = ['url(ch05_img/img01.png)', 'url(ch05_img/img02.png)','url(ch05_img/img03.png)'];
+        var color = ['#009900', '#990099', '#120000'];
+        let id = setInterval(function() {
+                    document.write(1);
+                    document.body.style.backgroundImage = img[i%img.length];
+                    document.body.style.backgroundSize = '100%';
+                    document.body.style.color = color[i%color.length];
+                    i++;
+            }, 1000);
+
+        setTimeout(function(){
+            clearInterval(id);
+        }, 10000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 백그라운드에 이미지 씌우기
+        document.write('테스트');
+        // document.body.style = 'background-color: #FF0000';
+        // document.body.style.backgroundColor = '#009900';
+        // document.body.style = 'background-image: url(ch05_img/img01.png)';
+        // document.body.style.backgroundImage = 'url(ch05_img/img01.png)';
+        // document.body.style.backgroundSize = '100%';
+        var img = ['url(ch05_img/img01.png)', 'url(ch05_img/img02.png)','url(ch05_img/img03.png)'];
+        var color = ['#009900', '#990099', '#120000'];
+        let i = 0;
+        setInterval(function(){
+                document.body.style.backgroundImage = img[i];
+                document.body.style.backgroundSize = '100%';
+                document.body.style.color = color[i];
+                i++;
+                if (i==3) {
+                    i=0;
+                }
+            }, 1000);
+
+        setTimeout(function(){
+            clearInterval(id);
+        }, 10000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

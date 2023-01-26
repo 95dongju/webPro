@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
-        
+        // 인코딩해서 전송
+        // 받은 데이터를 디코딩해서 원본으로 해석
+        let str = '이젠';
+        document.write('원본 str : ' +str+ '<br>');
+        let encodeStr = encodeURIComponent(str);
+        document.write('인코딩 str : ' +encodeStr + '<br>');
+        let decodeStr = decodeURIComponent(str);
+        document.write('디코딩 str : ' +decodeStr + '<br>');
     </script>
 </head>
 <body>
