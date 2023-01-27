@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Student(name, kor, mat, eng, sci){
+            this.name = name;
+            this.kor = kor;
+            this.mat = mat;
+            this.eng = eng;
+            this.sci = sci;
+            // 메소드는 공통 영역에 = prototype (메모리 절약됨)
+        }
+        Student.prototype.getSum = function(){
+            return this.kor + this.mat + this.eng + this.sci;
+        };
+        Student.prototype.getAvg = function(){
+            return this.getSum() / 4;
+        };
+        Student.prototype.toString = function(){
+            var output = '';
+            for(var key in this){
+                if(key!='getSum' && key!='getAvg' && key!= 'toString'){
+                    output += key + ' : ' + this[key] + ' &nbsp; ';
+                } else if (key=='getSum' || key=='getAvg') { // function은 반드시 () 호출!
+                    output += key.substring(3).toUpperCase() + ' : ' +this[key]() + ' &nbsp; ';
+                }
+            }
+            return output;
+        };
+        let students = [new Student('홍길동', 99, 91, 59, 98),
+                        new Student('박길동', 60, 81, 79, 87),
+                        new Student('신길동', 39, 91, 59, 92),
+                        new Student('유길동', 59, 91, 59, 93),
+                        new Student('강길동', 19, 91, 59, 91),
+                        new Student('지울 예정', 89, 91, 59, 30)];
+        students.forEach(function(data, idx){
+            document.write(idx+'번째 ' +data+ '<br>');
+        });
+        students.pop(); // 배열 마지막 idx의 값을 지움
+        document.write('<h3> pop 후 </h3>');
+        students.forEach(function(data, idx){
+            document.write(idx+'번째 ' +data+ '<br>');
+        });      
+        document.write(students.length+'명 남음');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

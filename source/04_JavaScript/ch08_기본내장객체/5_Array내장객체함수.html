@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var arr1 = new Array('hig','abc','zyx', 'cdf'); // ['hig','abc','zyx', 'cdf'];
+        var arr2 = [52, 100, 12, 94, 32];
+
+        document.write('arr1의 정렬 전 : ' + arr1 + '<br>');
+        arr1.sort(); // 기본적으로 아스키(ascii)코드 정렬 제공
+        document.write('arr1의 정렬 후 : ' + arr1 + '<br>');
+        document.write('arr2의 정렬 전 : ' +arr2 + '<br>');
+        //()안에 콜백함수 들어옴  arr2.sort(function(){});
+        arr2.sort(function(left,right){
+            return left-right; // 오름차순 정렬 / (right - left) 내림차순 정렬
+            // if(left<right){ // 내림차순 정렬 (앞에 큰 값)
+            //     return 1; // 양수면 right가 먼저 (자리 바꿈)
+            // }else if(left>right){
+            //     return -1; // 음수면 left가 먼저
+            // }else{
+            //     return 0; // 수가 같으면 그대로
+            // }
+        });
+        
+        document.write('arr2의 오름차순  정렬 후 : ' + arr2 + '<br>');
+        arr2.reverse(); // 배열 요소 순서 뒤집기
+        document.write('arr2 배열 순서 뒤집기 : ' + arr2 + '<br>');
+        var sliceArr = arr2.slice(0,3); // 0번째부터 3번째 앞까지 추출
+        document.write('arr2의 top3 : ' + sliceArr + '<br>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="5_replaceAll.js"></script>
+    <script>
+        let person = {
+            name: '홍길동', // 속성 변수
+            age: 20,
+            eat: function(food){ // 메소드 내에서 this 키워드 생략 불가
+                var msg = this.age + '살 ' + this.name + '님, ' + food + '를 먹었습니다';
+                alert(msg);
+            },
+            toString : function() {
+                let output = '';
+                for(var key in this) {
+                    if (key!='eat' && key!='toString'){
+                        output += key + ' : ' +this[key] + '\n';
+                    }
+                }
+                return output;
+            },
+        };
+        alert(person); //alert (person.toString());
+        // string.replace(oldStr, newStr); string에서 oldStr을 newStr으로 교체 (처음 하나만 교체)
+        // document.write(person.toString().replace('\n','<br>'));
+        document.write(replaceAll(person.toString(), '\n','<br>'));
+    person.address = '서울 서대문';
+    document.write(replaceAll(person.toString(), '\n','<br>'));
+        // toString 구현 방식 : for-in문 이용
+        // arr = [10,20,30];
+        // for(var idx in arr){
+        //     document.write(arr[idx]+ '<br>');
+        // }
+        // for(var data of arr) { // for-of는 idx가 아닌 data가 copy됨
+        //     document.write(data+ '<br>');
+        // }
+
+        // for-of문 이용
+        // var output = '';
+        // for(var key in person){
+        //     //output += key + ':' +person[key]+'<br>'; // function 전체 출력됨
+        //     if (key != 'eat') {
+        //         output += key + ':' +person[key]+'<br>';
+        //     }
+        // }
+        // document.write(output);
+        // output = '';
+        
+        // //person의 key (속성 변수)를 배열 keyList = ['name','age','eat']
+        // var keyList = Object.keys(person);
+        // document.write(keyList+'<br>');
+
+        // for(var key of keyList){
+        //     if(key!='eat') {
+        //         output += key + ':' +person[key]+'<br>';
+        //     }
+        // }
+        // document.write(output);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

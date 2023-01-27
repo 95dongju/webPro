@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Rectangle (w, h){ 
+            let width = w; // 외부에서 access 할 수 없는 지역변수 (Rectangle 함수 안에서만 유효함)
+            let height = h; 
+            this.getWidth = function(){ // getter 이용해서 get 가능
+                return width;
+            };
+            this.getHeight = function(){
+                return height;
+            };
+            this.setWidth = function(w){ // setter
+                width = w;
+            };
+            this.setHeight = function(h){
+                height = h;
+            };
+        }
+        Rectangle.prototype.getArea = function(){ // prototype은 공통영역에 있기 때문에 this.width 사용 불가
+            return this.getWidth() * this.getHeight();
+        };
+        let rect = new Rectangle(5,7);
+        document.write('rect의 가로 : '+rect.getWidth() + '<br>'); // rect.w, rext.width 불가 
+        document.write('rect의 세로 : '+rect.getHeight() + '<br>'); 
+        document.write('넓이 : ' +rect.getArea() + '<br>');
+        rect.setHeight(70);
+        document.write('<h3>수정후</h3>');
+        document.write('rect의 가로 : '+rect.getWidth() + '<br>'); // rect.w, rext.width 불가 
+        document.write('rect의 세로 : '+rect.getHeight() + '<br>'); 
+        document.write('넓이 : ' +rect.getArea() + '<br>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

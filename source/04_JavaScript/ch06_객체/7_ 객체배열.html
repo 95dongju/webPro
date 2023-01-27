@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src = "5_replaceAll.js"></script>
+    <script>
+        var students = [{'name':'김','kor':99,'mat':90,'eng':99, 'sci':90},
+                        {'name':'박','kor':91,'mat':92,'eng':91, 'sci':95}];
+        students.push({'name':'이','kor':90,'mat':76,'eng':88, 'sci':92});
+        students.push({'name':'강','kor':80,'mat':65,'eng':97, 'sci':91});
+        students.push({'name':'홍','kor':70,'mat':46,'eng':95, 'sci':76});
+        students.push({'name':'신','kor':60,'mat':77,'eng':92, 'sci':32});
+        for(var idx in students) {
+            students[idx].getSum = function() {
+                return this.kor + this.mat + this.eng + this.sci;
+            };
+            students[idx].getAvg = function() {
+                return this.getSum() / 4; // 소수점 유지
+            };
+            students[idx].toString = function(){
+                var output = '';
+                for (var key in this) {
+                    if(key!='getSum' && key!= 'getAvg' && key!='toString'){
+                        output += key + " : " + this[key] + ' ';
+                    } else if (key == 'getSum') {
+                        output += key.substring(3) + ' : ' + this[key]() + ' ';
+                    } else if (key == 'getAvg') {
+                        output += key.substring(3) + ' : ' + this[key]() + '\n';
+                    }
+                }
+                return output;
+            };
+        }
+
+        //1. 일반for문
+        document.write('<h3>일반for문</h3>')
+        var out = '';
+        for (var idx = 0; idx<students.length; idx++) {
+            out += idx + '번째 ';
+            out += students[idx]; //자동으로 toString() 붙음
+        }
+        // alert(out);
+        document.write(replaceAll(out, '\n','<br>'));
+
+        //2. for-in문
+        document.write('<h3>for-in</h3>')
+        for (var idx in students) {
+            document.write(idx+ '번째' +students[idx]+'<br>');
+        }
+
+        //3. for-of문
+        document.write('<h3>for-of</h3>')
+        for (var student of students) {
+            document.write(student+'<br>');
+        }
+
+        //4. forEach() 함수 1
+        document.write('<h3>forEach 1</h3>')
+        students.forEach(function(data, idx){
+            document.write(idx+ '번째 ' +data+ '<br>'); 
+            // == document.write(idx + '번째 ' + students[idx] + '<br>');
+        });
+
+        //5. forEach() 함수 2 (idx 제외)
+        document.write('<h3>forEach 2</h3>')
+        students.forEach(function(data) {
+            document.write(data+'<br>');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
