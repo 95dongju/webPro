@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+            alert('윈도우가 로드됨'); //3  body가 다 떠야 실행되기 때문에 마지막에 실행됨
+        }
+        alert('Process 1 전'); // 1
+    </script>
+</head>
+<body>
+    <h1>Process - 1</h1>
+    <script>alert('1과 2 사이');</script> <!--2-->
+    <h1>Process - 2</h1>
+</body>
+</html>

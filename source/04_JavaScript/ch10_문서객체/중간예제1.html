@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            margin: 0 auto;
+        }
+        td {
+            padding: 100px 30px;
+        }
+    </style>
+    <script>
+        var color = ['red','orange','yellow','green','blue','navy','purple'];
+        var td = document.getElementsByTagName("td");
+        window.onload = function() {
+            for (var i=0; i<td.length; i++){
+                td[i].style.backgroundColor = color[i];
+            }
+        };
+        function change(n){
+            document.body.style.backgroundColor = color[n];
+        };
+        function restore(){
+            document.body.style.backgroundColor = 'white';
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <table>
+            <tr onmouseout="restore()">
+                <td onmouseover = "change(0)"></td>
+                <td onmouseover = "change(1)"></td>
+                <td onmouseover = "change(2)"></td>
+                <td onmouseover = "change(3)"></td>
+                <td onmouseover = "change(4)"></td>
+                <td onmouseover = "change(5)"></td>
+                <td onmouseover = "change(6)"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

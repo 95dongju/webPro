@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #wrap {
+            margin: 0 auto;
+            width: 500px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function link(n){
+            var url = ['https://www.naver.com/',
+                        'https://www.daum.net/',
+                        'https://www.google.co.kr/',
+                        'https://www.youtube.com/'];
+            location.href = url[n];
+        };
+    </script>
+</head>
+<body>
+    <div id = "wrap">
+        <table>
+            <tr><h1>중간예제2. 메뉴</h1></tr>
+            <tr>
+                <td><button onclick="link(0)">네이버</button></td>
+                <td><button onclick="link(1)">다음</button></td>
+                <td><button onclick="link(2)">구글</button></td>
+                <td><button onclick="link(3)">유튜브</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

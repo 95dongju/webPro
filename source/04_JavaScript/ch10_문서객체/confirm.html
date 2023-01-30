@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            margin: 10px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var id = opener.document.getElementById('id').value;
+            var modifyId = document.getElementById('modifyId');
+            modifyId.value = id;
+        };
+        function send(){
+            var modifyId = document.getElementById('modifyId').value;
+            opener.document.getElementById('id').value = modifyId;
+            close();
+        };
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>ID <input type="text" id="modifyId"></td>
+            <td><button>체크</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="send()">아이디사용</button></td>
+        </tr>
+    </table>
+</body>
+</html>

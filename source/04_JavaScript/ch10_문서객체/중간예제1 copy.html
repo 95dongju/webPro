@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {margin: 0 auto;}
+        td {padding: 100px 30px;}
+        /* div#wrap tr td:nth-child(1) {background-color: red;}
+        td:nth-child(2){background-color: orange;}
+        td:nth-child(3){background-color: yellow;}
+        td:nth-child(4){background-color: green;}
+        td:nth-child(5){background-color: blue;}
+        td:nth-child(6){background-color: indigo;}
+        td:nth-child(7){background-color: purple;} */
+    </style>
+    <script>
+        window.onload = function() {
+            var td = document.getElementsByTagName("td");
+            td[0].style.backgroundColor = 'red';
+            td[1].style.backgroundColor = 'orange';
+            td[2].style.backgroundColor = 'yellow';
+            td[3].style.backgroundColor = 'green';
+            td[4].style.backgroundColor = 'blue';
+            td[5].style.backgroundColor = 'indigo';
+            td[6].style.backgroundColor = 'purple';
+            function change() {
+                if (td[0].onmouseover) {
+                    document.body.style.backgroundColor = 'red';
+                }
+            };
+            function restore() {
+                document.body.style.backgroundColor = 'white';
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <table>
+            <tr>
+                <td class="color" onmouseover = "change()"
+                    onmouseout = "restore()"></td>
+                <td class="color" onmouseover = "change()"
+                    onmouseout = "restore()"></td>
+                <td class="color" onmouseover = "change()"
+                    onmouseout = "restore()"></td>
+                <td class="color" onmouseover = "change()"
+                    onmouseout = "restore()"></td>
+                <td class="color" onmouseover = "change()"
+                    onmouseout = "restore()"></td>
+                <td class="color" onmouseover = "change()"
+                    onmouseout = "restore()"></td>
+                <td class="color" onmouseover = "change()"
+                    onmouseout = "restore()"></td>
+            </tr>
+            
+        </table>
+    </div>
+</body>
+</html>

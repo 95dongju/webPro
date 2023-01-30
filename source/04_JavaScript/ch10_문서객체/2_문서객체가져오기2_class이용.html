@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+            // id로 가져오기    : document.getElementById(id명); (element 하나 return)
+            // class로 가져오기 : document.getElementsByClassName(); (배열 return)
+            var clock1 = document.getElementsByClassName('clock1');
+            clock1[0].innerHTML = new Date().toLocaleDateString();
+            clock1[1].innerHTML = '<b>'+new Date().toLocaleTimeString()+'</b>';
+            var clock2 = document.getElementsByClassName('clock2')[0];
+            clock2.value = new Date().toLocaleString();
+            // innerHTML에는 태그 가능, value에는 태그 불가능
+            // == clock1[1].innerHTML = '<b>'+new Date().toLocaleTimeString()+'</b>';
+
+            // clock2.style.color = 'red';
+            // clock2.style.fontSize = '32px';
+            // == clock2.style = 'color:red; font-size:32px;';
+            
+            clock2.style.cssText = 'color:red; font-size:32px';
+        };
+    </script>
+</head>
+<body>
+    <h1 class="clock1 clockh1"></h1>
+    <p class="clock1 clockp"></p>
+    <input type="text" class="clock2"/>
+</body>
+</html>

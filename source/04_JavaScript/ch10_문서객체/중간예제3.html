@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            margin: 0 auto;
+        }
+        td {
+            padding: 100px 30px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <script>
+        var color = ['red','orange','yellow','green','blue','navy','purple'];
+        var td = document.getElementsByTagName("td");
+        window.onload = function() {
+            for (var i=0; i<td.length; i++){
+                td[i].style.backgroundColor = color[i];
+            }
+        };
+        function change(n){
+            var h2 = document.createElement('h2');
+            var textNode = document.createTextNode('야호 거의 끝났다');
+            h2.appendChild(textNode);
+            document.body.appendChild(h2);
+            h2.style.color = color[n];
+            document.body.style.backgroundColor = 'black';
+        };
+        function restore(){
+            var msg = document.getElementsByTagName('h2')[0];
+            document.body.removeChild(msg);
+            document.body.backgroundColor = 'white';
+        }
+        </script>
+</head>
+<body>
+    <div id="wrap">
+        <table>
+            <tr onmouseout="restore()">
+                <td onmouseover = "change(0)"></td>
+                <td onmouseover = "change(1)"></td>
+                <td onmouseover = "change(2)"></td>
+                <td onmouseover = "change(3)"></td>
+                <td onmouseover = "change(4)"></td>
+                <td onmouseover = "change(5)"></td>
+                <td onmouseover = "change(6)"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

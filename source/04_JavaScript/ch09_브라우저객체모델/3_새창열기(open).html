@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var child = window.open();
+        /*
+        open (속성1, 속성2, 속성3);
+        속성 1 : 열린 새창(child창)의 url
+        속성 2 : 윈도우의 이름
+        속성 3 : width, height, left, top, location(주소창 유무로 1,0)
+        */
+        if(child){
+            child.document.write('<h1>새창</h2>');
+        }else{
+            alert('팝업차단 해제하셔야 새창이 열립니다');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
