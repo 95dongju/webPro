@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        h1{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var header = document.querySelector('h1#header');
+            header.addEventListner('click', ()=>{
+                alert('click');
+            });
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Click</h1>
+</body>
+</html>

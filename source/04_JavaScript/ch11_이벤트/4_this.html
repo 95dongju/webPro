@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+            var header = document.getElementsByClassName('header');
+            for(var idx in header){
+                header[idx].onclick = function(){
+                    this.style.color = 'red';
+                    this.style.border = '1px solid orange';
+                    // this: 클릭 이벤트가 발생된 컴포넌트 객체. this 사용시 화살표 함수 불가
+                }; // eventlistener
+            } //for
+            // header[0].onclick = function(){
+            //     header[0].style.color = 'red';
+            //     header[0].style.border = '1px solid orange';
+            // };
+        };
+    </script>
+</head>
+<body>
+    <h1 class="header">CLICK1</h1>
+    <h1 class="header">CLICK2</h1>
+    <h1 class="header">CLICK3</h1>
+    <h1 class="header">CLICK4</h1>
+    <h1 class="header">CLICK5</h1>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{
+            width:800px;
+            margin: 10px auto;
+        }
+        td{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var img = document.querySelectorAll('img');
+            for (let i=0; i<4; i++) {
+                img[i].onmouseover = function() {
+                    this.setAttribute('src', 'img/'+i+'over.jpg');
+                };
+                img[i].onmouseout = function(){
+                    this.setAttribute('src', 'img/'+i+'out.jpg');
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="img/0out.jpg"/>
+            </td>
+            <td>
+                <img src="img/1out.jpg"/>
+            </td>
+            <td>
+                <img src="img/2out.jpg"/>
+            </td>
+            <td>
+                <img src="img/3out.jpg"/>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

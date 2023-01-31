@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+            var btnA = document.querySelector('button#btnA');
+            var btnB = document.querySelector('#btnB');
+            var countA = document.getElementById('countA');
+            var countB = document.getElementById('countB');
+            // buttonA를 클릭할 경우 buttonB의 click 이벤트 강제 발생
+            btnA.onclick = function(){
+                countA.innerHTML = Number(countA.innerHTML) + 1;
+                // btnB.addEventListener(); 이벤트 강제 발생은 일반 함수를 많이 사용
+            };
+            btnB.addEventListener('click', () => {
+                countB.innerHTML = Number(countB.innerHTML) + 1;
+                btnA.onclick();
+            });
+        };
+    </script>
+</head>
+<body>
+    <button id="btnA">BUTTON A</button>
+    <button id="btnB">BUTTON B</button>
+    <h1>BUTTON A 클릭 횟수 - <span id="countA">0</span></h1>
+    <h1>BUTTON B 클릭 횟수 - <span id="countB">0</span></h1>
+</body>
+</html>
