@@ -1,4 +1,4 @@
-#####221129 [1] Web programming and Java#####
+221129 [1] Web programming and Java
 
 1. 컴퓨터 프로그래밍: 컴퓨터를 제어할 수 있는 명령어
 	CPU 종속적 언어: 컴파일된 프로그램이 특정 CPU에서만 실행 가능 (ex. 어셈블리)
