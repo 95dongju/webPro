@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            width: 500px;
+            margin: 10px auto;
+            background-color: darkgreen;
+        }
+        td {
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+    <script>        
+        window.onload = function(){
+            var tds = document.getElementsByTagName('td');
+            var position = document.querySelector('p#msg b');
+            var idx = 4;
+            tds[4].style.backgroundColor = 'yellow';
+            this.onkeyup = function(){
+                switch(event.keyCode){
+                    case 37: // 좌
+                        if (idx%3!=0) {
+                            idx--;
+                        } else {
+                            idx = idx+2;
+                        }
+                        break;
+                    case 38: // 상
+                        idx = idx-3;
+                        if (idx < 0 ) {
+                            idx = idx + 9;
+                        }
+                        break;
+                    case 39: // 우
+                        if (idx%3!=2) {
+                            idx++;
+                        }else {
+                            idx = idx-2;
+                        }
+                        break;
+                    case 40: // 하
+                        idx = idx+3;
+                        if (idx > 8) {
+                            idx = idx - 9;
+                        }
+                        break;
+                    default:
+                        return;
+                    }
+                    for (var i=0; i<tds.length; i++){
+                        tds[i].style.backgroundColor = 'white';
+                    }
+                    tds[idx].style.backgroundColor = 'yellow';
+                    position.innerHTML = idx;
+            };
+        };
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>0</td><td>1</td><td>2</td>
+        </tr>
+        <tr>
+            <td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr>
+            <td>6</td><td>7</td><td>8</td>
+        </tr>
+    </table>
+    <p id="msg">현위치 : <b>4</b></p>
+</body>
+</html>

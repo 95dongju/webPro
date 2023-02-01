@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onkeyup = function(){
+            let key = event.keyCode; // event.keyCode: 입력된 키의 코드 값
+            alert(key); 
+            // 우측 숫자 키: 96(0), 97(1) ~ 105(9)
+            // 상단 숫자 키: 48(0), 49(1) ~ 57(9)
+            // 알파벳: A(65), B(66), C(67) ... Z(90)
+            if(key>=48 && key<=57){
+                alert('상단 키보드 숫자('+(key-48)+') 입력하셨습니다');
+            }else if(key>=96 && key<=105){
+                alert('우측 키보드 숫자('+(key-96)+') 입력하셨습니다');
+            }else if (key>=65 && key<=90){
+                //String.fromCodePoint(아스키코드) : 아스키코드값을 문자로 return
+                alert('알파벳('+String.fromCodePoint(key)+') 입력하셨습니다');
+            }
+        };
+        window.onclick = function(){
+            document.body.innerHTML = 
+            'screen 좌표 : ' + event.screenX + ', ' + event.screenY + '<br>';
+            document.body.innerHTML +=
+            'offset 좌표 : ' + event.offsetX + ', ' + event.offsetY + '<br>';
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
