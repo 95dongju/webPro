@@ -43,13 +43,13 @@ public class Ex3_LifeCycle extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
-		response.getWriter().append("<h1>doGet() 수행</h1>").append(request.getContextPath());
+		response.getWriter().append("<h1>doGet() 수행</h1>");
 		System.out.println("doGet() 실행");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
-		response.getWriter().append("<h1>doPost() 수행</h1>").append(request.getContextPath());
+		response.getWriter().append("<h1>doPost() 수행</h1>");
 		System.out.println("doPost() 실행");
 	}
 }
