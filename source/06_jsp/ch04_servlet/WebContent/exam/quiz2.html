@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		form{			
+			border: 1px solid blue;
+			width: 500px;
+		}
+		table.info{
+			margin: 10px auto;
+			text-align: center;
+		}
+		caption {
+			font-weight: bold;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			document.querySelector("form").onsubmit = function(){
+				var name = document.getElementsByClassName("name")[0];
+				var add = document.getElementsByClassName("address")[0];
+				if(!name.value){
+					alert("이름을 입력하세요");
+					return false;
+				}else if(!add.value){
+					alert("주소를 입력하세요");
+					return false;
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<form action="../Quiz2" method="post">
+		<table class="info">
+			<caption>개인정보</caption>
+			<tr>
+				<td>이름: <input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>주소: <input type="text" name="address"></td>
+			</tr>
+			<tr>
+				<td colspan=2><input type="submit" value="확인"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

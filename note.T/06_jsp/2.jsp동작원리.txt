@@ -1,0 +1,11 @@
+< jsp 동작 원리 >
+브라우저에서 http://127.0.0.1:8090\ch02_semiJSP/hello.jsp
+
+- 소스 
+: D:\JU\source\06_jsp\ch02_semiJSP\WebContent\hello.jsp
+
+- 실행폴더 (실행은 톰캣에 의해)
+: D:\JU\IDE\apache-tomcat-9\wtpwebapps\ch02_semiJSP에 소스 폴더의 webContent 폴더의 내용을 복사
+
+- jsp를 서블릿(자바)으로 변경하는 폴더
+: D:\JU\IDE\apache-tomcat-9\work\Catalina\localhost\ch02_semiJSP\org\apache\jsp\hello_jsp.java
