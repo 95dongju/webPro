@@ -10,6 +10,9 @@
 </head>
 <body>
 	<h1>ex5_include.jsp 페이지입니다</h1>
-	<%@ include file="includedPage.jsp" %>
+	<%-- <%@ include file="includedPage.jsp" %> = jsp 파일의 원본 그대로 include 하기 때문에 conPath 지정한 것도 그대로 들어옴 --> --%>
+	<jsp:include page="includedPage.jsp"/> <!-- jsp 파일의 결과 소스 (html)을 include -->
+	<h1>ex5_include.jsp 페이지입니다</h1>
+
 </body>
 </html>
