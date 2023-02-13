@@ -10,30 +10,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Quiz2
+ * Servlet implementation class Quiz3
  */
-@WebServlet("/Quiz2")
-public class Quiz2 extends HttpServlet {
+@WebServlet("/Quiz3")
+public class Quiz3 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
-		String name = request.getParameter("name");
-		String address = request.getParameter("address");
+		int num = Integer.parseInt(request.getParameter("num"));
+		int tot = 0;
 		PrintWriter out = response.getWriter();
-		if (name!=null) {
-			out.println("<html>");
-			out.println("<body>");
-			out.println("<h2>반가워요, " +name+"님!<br>"+address+"에 사시는군요.</h2>");
-			out.println("</body>");
-			out.println("</html>");
-		}else {
-			out.println("<h2>이름과 주소를 입력해 주세요</h2>");
+		for(int i=1; i<=num; i++) {
+			tot +=i;
 		}
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("h2 {color: red;}");
+		out.println("</style>");
+		out.println("</head>");
+		out.println("<body>");
+		out.print("<h2>1부터 "+num+"까지 누적합은 "+tot);
+		out.println("</body>");
+		out.println("</html>");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

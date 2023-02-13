@@ -21,10 +21,10 @@
 			document.querySelector("form").onsubmit = function(){
 				var name = document.getElementsByClassName("name")[0];
 				var add = document.getElementsByClassName("address")[0];
-				if(!name.value){
+				if(name.value==""){
 					alert("이름을 입력하세요");
 					return false;
-				}else if(!add.value){
+				}else if(add.value==""){
 					alert("주소를 입력하세요");
 					return false;
 				}
@@ -37,10 +37,10 @@
 		<table class="info">
 			<caption>개인정보</caption>
 			<tr>
-				<td>이름: <input type="text" name="name"></td>
+				<td>이름: <input type="text" name="name" class="name"></td>
 			</tr>
 			<tr>
-				<td>주소: <input type="text" name="address"></td>
+				<td>주소: <input type="text" name="address" class="address"></td>
 			</tr>
 			<tr>
 				<td colspan=2><input type="submit" value="확인"></td>

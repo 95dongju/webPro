@@ -9,3 +9,18 @@
 
 - jsp를 서블릿(자바)으로 변경하는 폴더
 : D:\JU\IDE\apache-tomcat-9\work\Catalina\localhost\ch02_semiJSP\org\apache\jsp\hello_jsp.java
+
+
+
+
+<사용자가 사용하도록 웹 서버에 배포 : 나의 톰캣의 webapps 폴더에 x라는 이름의 context root로 배포> // port 번호가 80, root 라는 이름이면 안 써도 됨
+
+1. 톰캣의 webapps 폴더 밑에 x 폴더 생성
+
+2. 소스폴더의 webContent 폴더(D:\JU\source\06_jsp\ch05_jsp\WebContent)에 있는 모든 내용을 1에서 생성한 x 폴더 밑에 복사
+
+3. 소스 폴더의 build (D:\JU\source\06_jsp\ch05_jsp\build) 밑에 있는 classes 폴더를 2에서 생성된 x/WEB-INF 밑에 복사
+
+4. 톰캣 startup (부팅) --> bin/startup
+
+5. 브라우저 url에 다음을 입력하여 실행 :  http://localhost:8090/x
