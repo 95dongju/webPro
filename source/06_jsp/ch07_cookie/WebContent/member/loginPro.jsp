@@ -9,6 +9,7 @@
 		<link href="<%=conPath %>/css/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<jsp:include page="../member/header.jsp"/>
 	<%
 		request.setCharacterEncoding("utf-8");
 		String id = request.getParameter("id");

@@ -11,6 +11,7 @@
 <link href='join.css' rel='stylesheet'>
 </head>
 <body>
+	<jsp:include page="../member/header.jsp"/>
 <%
 	request.setCharacterEncoding("utf-8");
 	String name       = request.getParameter("name");

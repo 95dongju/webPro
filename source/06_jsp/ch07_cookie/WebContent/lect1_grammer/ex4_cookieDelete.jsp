@@ -9,24 +9,20 @@
 		<link href="<%=conPath %>/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h1>특정 쿠키(쿠키 이름이 cookieName인 쿠키) 찾고 값 확인</h1>
-	<%
+	<h1>특정 쿠키(쿠키 이름이 cookieName인 쿠키) 삭제</h1>
+	<% // 같은 이름의 쿠키를 생성, 유효시간을 0초로 setting한 후 response에 탑재 -> 덮어씌워서 삭제
 		Cookie[] cookies = request.getCookies();
 		if(cookies!=null){
-			int idx;
-			for(idx=0; idx<cookies.length; idx++){
-				String name = cookies[idx].getName(); // idx번째의 쿠키 이름
-				if(name.equals("cookieName")){					
-					String value = cookies[idx].getValue(); // 쿠키값
-					out.println("<h3>찾고자 하는 쿠키의 이름: " +name+", 값" +value+ "</h3>");
+			for(Cookie c : cookies){
+				String name = c.getName();
+				if(name.equals("cookieName")){
+					Cookie cookie = new Cookie("cookieName","xxxxxx");
+					cookie.setMaxAge(0);
+					response.addCookie(cookie);
+					out.println("<h3>쿠키 삭제 성공</h3>");
 					break;
 				}
 			}
-			if(idx==cookies.length){
-				out.println("<h3>찾고자 하는 쿠키가 없습니다</h3>");
-			}
-		}else{
-			out.println("<h3>생성된 쿠키가 없습니다</h3>");
 		}
 	%>
 	<hr>
