@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="step6.jsp">
+		<p>학번 <input type="text" name="noStudent" required="required"></p>
+		<p>이름 <input type="text" name="sName" required="required"></p>
+		<p>학년 <select name="sGrade" size="3" required="required">
+				<option value=1>1학년</option>
+				<option value=2>2학년</option>
+				<option value=3>3학년</option>
+				<option value=4>4학년</option>
+				<option value=5>5학년</option>
+				<option value=6>6학년</option>
+			</select></p>
+		<p> 반 <input type="radio" name="sClass" value="A" required="required">A반
+		  	<input type="radio" name="sClass" value="B">B반
+		   	<input type="radio" name="sClass" value="C">C반</p>
+		<p>점수 <input type="number" name="score" min="0" max="100" required="required"></p>
+		<input type="submit" value="제출">
+	</form>
+</body>
+</html>
