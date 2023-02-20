@@ -13,9 +13,10 @@
 <body>
 <%
 	request.setCharacterEncoding("utf-8");
-	String name       = request.getParameter("name");
-	String id     		= request.getParameter("id");
-	String pw 				= request.getParameter("pw");
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	String name = request.getParameter("name");
+	session.setAttribute("id", id);
 	String birth 			= request.getParameter("birth");
 	//Date   birthDate  = Date.valueOf(birth);
 	//Timestamp birthTimestamp = Timestamp.valueOf(birth + " 00:00:00");

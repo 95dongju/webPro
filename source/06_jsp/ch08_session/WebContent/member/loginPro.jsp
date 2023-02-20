@@ -14,16 +14,13 @@
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		// DB에 id와 pw 확인 작업 : SELECT * FROM MEMBER WHERE ID=? AND PW=?
+		
 		if(id==null || !id.equals("aaa") || pw==null || !pw.equals("111")){
 			response.sendRedirect("login.jsp?msg=xx");
 		}else{
 			// 로그인 처리
-			Cookie cookie = new Cookie("id", id);
-			cookie.setMaxAge(-1);
-			response.addCookie(cookie); // id라는 이름의 쿠키를 response에 탑재
-			Cookie cookie2 = new Cookie("name", "홍길동"); // DB에서 가져온 이름을 쿠키 값으로
-			cookie2.setMaxAge(-1);
-			response.addCookie(cookie2); // name이라는 이름의 쿠키 response에 탑재
+			session.setAttribute("id", id);
+			session.setAttribute("name", "홍길동");
 			response.sendRedirect(conPath+"/member/main.jsp");
 		}
 	%>

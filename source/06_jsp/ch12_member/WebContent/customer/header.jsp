@@ -1,3 +1,4 @@
+<%@page import="com.lec.customer.CustomerDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String conPath = request.getContextPath(); %>
@@ -21,7 +22,7 @@
 		}
 		header ul li a{
 			text-decoration: none;
-			color: #805040;
+			color: #005500;
 			font-weight: bold;
 			font-size: 1.5em;
 		}
@@ -31,21 +32,20 @@
 	<header>
 		<div id="nav">
 		<%
-			String name = (String)session.getAttribute("name");
-			String id = (String)session.getAttribute("id");
-			if(id == null){ // 로그인 전 헤더 화면
+			CustomerDto customer = (CustomerDto)session.getAttribute("customer");
+			if(customer == null){
 			%>
 			<ul>
-				<li><a href="<%=conPath %>/member/join.jsp">회원가입</a></li>
-				<li><a href="<%=conPath %>/member/login.jsp">로그인</a></li>
-				<li><a href="<%=conPath %>/member/main.jsp">홈</a></li>
+				<li><a href="<%=conPath %>/customer/join.jsp">회원가입</a></li>
+				<li><a href="<%=conPath %>/customer/login.jsp">로그인</a></li>
+				<li><a href="<%=conPath %>/customer/main.jsp">홈</a></li>
 			</ul>
-			<%}else { // 로그인 후 헤더 화면
+			<%}else {
 			%>
 			<ul>
-				<li><a href="<%=conPath %>/member/logout.jsp">로그아웃</a></li>
-				<li><a href="<%=conPath %>/member/main.jsp">메인화면</a></li>
-				<li><a href="<%=conPath%>/member/main.jsp"><%=name %>님</a></li>
+				<li><a href="<%=conPath %>/customer/logout.jsp">로그아웃</a></li>
+				<li><a href="<%=conPath %>/customer/modify.jsp">정보수정</a></li>
+				<li><a href="<%=conPath%>/customer/main.jsp"><%=customer.getCname() %>님</a></li>
 			</ul>
 			<%}%>
 		</div>

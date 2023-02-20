@@ -9,25 +9,24 @@
 		<link href="<%=conPath %>/css/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<jsp:include page="../member/header.jsp"/>
+	<jsp:include page="../customer/header.jsp"/>
 	<div id="loginForm_wrap">
 		<div id="login_title">로그인</div>
-		<form action="<%=conPath %>/member/loginPro.jsp" method="post">
+		<form action="<%=conPath %>/customer/loginPro.jsp" method="post">
+		<input type="hidden" name="method" value="<%=request.getParameter("method")%>">
 			<table>
 				<tr><td></td></tr>
 				<tr>
-					<td><label for="id">아이디</label></td>
-					<td><input type="text" name="id" id="id" required="required" autofocus="autofocus"
-								value="<%
-											String sessionId = (String)session.getAttribute("id");
-											if(sessionId != null){
-												out.print(sessionId);
-											}
-										%>"></td>
+					<td><label for="cid">아이디</label></td>
+					<td><input type="text" name="cid" id="cid" required="required" autofocus="autofocus"
+					value='<%
+								String cid = (String)session.getAttribute("cid");
+								out.print(cid==null ? "" : cid);
+							%>'></td>
 				</tr>
 				<tr>
-					<td><label for="pw">비밀번호</label></td>
-					<td><input type="password" name="pw" id="pw" required="required"></td>
+					<td><label for="cpw">비밀번호</label></td>
+					<td><input type="password" name="cpw" id="cpw" required="required"></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr>
@@ -39,7 +38,7 @@
 					<td colspan="2">
 						<%
 							String msg = request.getParameter("msg");
-							if(msg!=null){ // 로그인 실패, 다시 해당 페이지로 옴
+							if(msg!=null){
 						%>
 							<p id="login_findIdPw" onclick="alert('아이디는 aaa/ 비번은 111')">
 								아이디/비밀번호를 잊으셨나요?
@@ -48,9 +47,9 @@
 					</td>
 				</tr>
 			</table>
-			<p id="login_join"> 아직 회원이 아니신가요? <a href="<%=conPath%>/member/join.jsp">회원가입</a></p>
+			<p id="login_join"> 아직 회원이 아니신가요? <a href="<%=conPath%>/customer/join.jsp">회원가입</a></p>
 		</form>
 	</div>
-	<jsp:include page="../member/footer.jsp"/>
+	<jsp:include page="../customer/footer.jsp"/>
 </body>
 </html>

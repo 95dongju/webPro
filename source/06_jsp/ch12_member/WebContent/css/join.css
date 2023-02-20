@@ -1,0 +1,28 @@
+@charset "UTF-8";
+body {
+	background-color: #ECF8E0;
+}
+#joinForm_wrap {width:430px; margin: 10px auto; border: 1px solid #005500; padding:20px;}
+#join_title{
+	width:400px;            	margin:10px auto;
+	padding-bottom:20px;     	border-bottom:1px solid #005500;
+	color:#005500;          	font-size:1.5em;
+	text-align:center;       	font-weight:bold;
+}
+#joinForm_wrap table{margin:0 auto; color:#005500;}
+#joinForm_wrap table tr{height:40px; }
+#joinForm_wrap table th{
+	width:120px;        	font-size:0.9em;
+	color:#005500;      	text-align:left;    	padding-left:10px;
+}
+#joinForm_wrap table td {width: 300px;}
+.cid, .cpw, .cpwChk, .cname, .ctel, .cemail, .caddress, .tempBirth, .oldPw {
+	border: 1px solid #005500; height:20px;	width:95%; padding:3px;
+	outline:0;
+}
+.mailSend  {height: 60px;}
+.joinBtn_style {
+	color: #ffffff;        	background: #005500;
+	border:0;               outline: none;
+	width:32%;              padding:5px 0; 
+}

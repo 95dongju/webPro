@@ -7,25 +7,24 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<style>
+		body {
+			background-color: #ECF8E0;
+		}
 		#mainForm_wrap{
-			height: 400px;
-			line-height: 400px;
+			height: 600px;
+			line-height: 630px;
 			font-size: 32px;
-			font-weight: bold;
-			color: #D4A190;
 			text-align: center;
-			width: 700px;
-			padding: 50px;
+			width: 400px;
 			margin: 0px auto;
-			border: 1px solid #D4A190;
 		}
 	</style>
 </head>
 <body>
-	<jsp:include page="../member/header.jsp"/>
+	<jsp:include page="../customer/header.jsp"/>
 	<div id="mainForm_wrap">
-		main 화면
+		MAIN 화면
 	</div>
-	<jsp:include page="../member/footer.jsp"/>
+	<jsp:include page="../customer/footer.jsp"/>
 </body>
 </html>
