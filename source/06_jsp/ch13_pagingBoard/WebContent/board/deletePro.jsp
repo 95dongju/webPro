@@ -12,6 +12,7 @@
 <body>
 	<%
 		int num = Integer.parseInt(request.getParameter("num"));
+		String pageNum = request.getParameter("pageNum");
 		String pw = request.getParameter("pw");
 		BoardDao bDao = BoardDao.getInstance();
 		int result = bDao.deleteBoard(num, pw);
@@ -19,7 +20,7 @@
 	%>
 			<script>
 				alert('<%=num%>번 글 삭제 완료');
-				location.href = '<%=conPath%>/board/list.jsp';
+				location.href = '<%=conPath%>/board/list.jsp?pageNum=<%=pageNum%>';
 			</script>
 	<%	}else{ %>
 			<script>

@@ -19,13 +19,14 @@
 	 <%
 	 	dto.setIp(request.getRemoteAddr()); // client의 ip로 세팅
 	 	// out.println(dto);
+	 	String pageNum = request.getParameter("pageNum");
 	 	BoardDao bDao = BoardDao.getInstance();
 	 	int result = bDao.updateBoard(dto);
 	 	if(result == BoardDao.SUCCESS){%>
 	 		<script>
 	 			alert('글 수정 성공');
 	 			<%-- location.href='<%=conPath%>/board/list.jsp'; --%>
-	 			location.href = '<%=conPath%>/board/content.jsp?num=<%=dto.getNum()%>';
+	 			location.href = '<%=conPath%>/board/content.jsp?num=<%=dto.getNum()%>&pageNum=<%=pageNum%>';
 	 		</script>
 	 <%	}else{ %>
 	 		<script>

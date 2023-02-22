@@ -13,6 +13,7 @@
 <body>
 	<% 
 		String num = request.getParameter("num"); // null 혹은 "3"
+		String pageNum = request.getParameter("pageNum");
 		BoardDao bDao = BoardDao.getInstance();
 		BoardDto dto = bDao.getBoardOneLine(num);
 		if(dto==null){
@@ -31,10 +32,10 @@
 				<tr><th>작성일</th><td><%=dto.getRdate() %></td></tr>
 				<tr>
 					<td colspan="2">
-						<button onclick="location.href='<%=conPath%>/board/updateForm.jsp?num=<%=num%>'">수정</button>
-						<button onclick="location.href='<%=conPath%>/board/deleteForm.jsp?num=<%=num%>'">삭제</button>
+						<button onclick="location.href='<%=conPath%>/board/updateForm.jsp?num=<%=num%>&pageNum=<%=pageNum%>'">수정</button>
+						<button onclick="location.href='<%=conPath%>/board/deleteForm.jsp?num=<%=num%>&pageNum=<%=pageNum%>'">삭제</button>
 						<button>답변</button>
-						<button onclick="location.href='<%=conPath%>/board/list.jsp'">목록</button>
+						<button onclick="location.href='<%=conPath%>/board/list.jsp?pageNum=<%=pageNum%>'">목록</button>
 					</td>
 				</tr>
 			</table>
