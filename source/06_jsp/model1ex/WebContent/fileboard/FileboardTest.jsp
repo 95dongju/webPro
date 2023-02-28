@@ -25,12 +25,12 @@
 		FileboardDto dto = new FileboardDto("aaa","제목",null, null, "1", 0, 0, 0, "129.9.9.1");
 		int result = fDao.insertFileboard(dto);
 	%>
-	<h1>3. 5번글 답변글쓰기 </h1>
+		<h1>3. 답변글쓰기 </h1>
 	<%
 		dto = new FileboardDto("ddd","답",null, null, "1", 10, 0, 0, "127.0.0.1");
 		result = fDao.reply(dto);
 	%>
-	<h1>4. 8번글 조회수 올리고 상세보기 </h1>
+	<h1>4. 글 조회수 올리고 상세보기 </h1>
 	<%
 		fDao.hitcountUp(4);
 		dto = fDao.getFileboardOneLine(4);

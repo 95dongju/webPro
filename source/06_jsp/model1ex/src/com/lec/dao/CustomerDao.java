@@ -230,7 +230,7 @@ public class CustomerDao {
 		return totalCnt;
 	}
 	// 7. 회원리스트 출력 (paging)
-	public ArrayList<CustomerDto> CustomerList(int startRow, int endRow){
+	public ArrayList<CustomerDto> customerList(int startRow, int endRow){
 		ArrayList<CustomerDto> dtos = new ArrayList<CustomerDto>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;

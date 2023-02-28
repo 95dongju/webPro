@@ -75,6 +75,7 @@ public class FileboardDao {
 			pstmt.setString(4, dto.getFfilename());
 			pstmt.setString(5, dto.getFpw());
 			pstmt.setString(6, dto.getFip());
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
@@ -164,48 +165,6 @@ public class FileboardDao {
 		return dtos;
 	}
 	// 5. 글 번호로 글 내용 가져오기
-	public FileboardDto getFileboardOneLine(String numStr) {
-		FileboardDto dto = null;
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet         rs    = null;
-		String sql = "SELECT * FROM FILEBOARD F, CUSTOMER C WHERE F.cID = C.cID AND fNUM=?";
-		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, numStr);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				 int fnum = rs.getInt("fnum");
-				 String cid = rs.getString("cid");
-				 String fsubject = rs.getString("fsubject");
-				 String fcontent = rs.getString("fcontent");
-				 String ffilename = rs.getString("ffilename");
-				 String fpw = rs.getString("fpw");
-				 int fhit = rs.getInt("fhit");
-				 int fref = rs.getInt("fref");
-				 int fre_level = rs.getInt("fre_level");
-				 int fre_step = rs.getInt("fre_step");
-				 String fip = rs.getString("fip");
-				 Date frdate = rs.getDate("frdate");
-				 String cname = rs.getString("cname");
-				 String cemail = rs.getString("cemail");
-				 dto = new FileboardDto(fnum, cid, fsubject, fcontent, ffilename, fpw, fhit, fref, fre_level, fre_step, fip, frdate, cname, cemail);
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		} finally {
-			try {
-				if(rs!=null) rs.close();
-				if(pstmt!=null) pstmt.close();
-				if(conn!=null) conn.close();
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
-			}
-		}
-		return dto;
-	}
-	// 5-1. 글 번호로 글 내용 가져오기
 	public FileboardDto getFileboardOneLine(int num) {
 		FileboardDto dto = null;
 		Connection conn = null;
@@ -268,27 +227,7 @@ public class FileboardDao {
 			}
 		}
 	}
-	// 6-1. 조회수 올리기
-	public void hitcountUp(String numStr) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		String sql ="UPDATE FILEBOARD SET fHIT = fHIT+1 WHERE fNUM=?";
-		try {
-			conn = getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, numStr);
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}finally {
-			try {
-				if(pstmt!=null) pstmt.close();
-				if(conn!=null) conn.close();
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
-			}
-		}
-	}
+
 	public int deleteFileboard(int fnum, String fpw) {
 		int result = FAIL;
 		Connection conn = null;
@@ -322,6 +261,7 @@ public class FileboardDao {
 			pstmt.setInt(1, fref);
 			pstmt.setInt(2, fre_step);
 			int result = pstmt.executeUpdate();
+			System.out.println(result==0? "첫 답변입니다":result+"행 step 조정");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
@@ -348,9 +288,10 @@ public class FileboardDao {
 			pstmt.setString(3, dto.getFcontent());
 			pstmt.setString(4, dto.getFfilename());
 			pstmt.setString(5, dto.getFpw());
-			pstmt.setInt(6, dto.getFre_step());
-			pstmt.setInt(7, dto.getFre_level());
-			pstmt.setString(8, dto.getFip());
+			pstmt.setInt(6, dto.getFref());
+			pstmt.setInt(7, dto.getFre_step()+1);
+			pstmt.setInt(8, dto.getFre_level()+1);
+			pstmt.setString(9, dto.getFip());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

@@ -23,7 +23,7 @@
 			int startRow = (currentPage - 1) * PAGESIZE + 1;
 			int endRow = startRow + PAGESIZE - 1;
 			CustomerDao cDao = CustomerDao.getInstance();
-			ArrayList<CustomerDto> customers = cDao.listCustomer(startRow, endRow);
+			ArrayList<CustomerDto> customers = cDao.customerList(startRow, endRow);
 			// out.println(customers);
 		%>
 		<table>
