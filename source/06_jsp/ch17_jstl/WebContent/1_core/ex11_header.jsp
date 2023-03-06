@@ -11,6 +11,25 @@
 </head>
 <body>
 	<!-- 사용자 로그인 : session.setAttribute("customer", customer); -->
-	<!-- 관리자 로그인 : session.setAttribute("admin", admin); -->
+	<!-- <!-- 관리자 로그인 : session.setAttribute("admin", admin); -->
+	<% session.setAttribute("customer", "test"); %>
+	<c:if test="${empty customer && empty admin }">
+		<!-- 로그인 전 메뉴 -->
+		<ul>
+			<li><a href="#">로그인</a></li>
+		</ul>
+	</c:if>
+	<c:if test="${not empty customer && empty admin }">
+		<!-- 사용자 로그인 메뉴 -->
+		<ul>
+			<li><a href="#">고객센터</a></li>
+		</ul>
+	</c:if>
+	<c:if test="${empty customer && not empty admit }">
+		<!-- 관리자 로그인 메뉴 -->
+		<ul>
+			<li><a href="#">공지사항</a></li>
+		</ul>
+	</c:if>
 </body>
 </html>
