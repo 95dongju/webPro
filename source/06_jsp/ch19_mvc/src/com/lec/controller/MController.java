@@ -17,6 +17,7 @@ import com.lec.service.Service;
 @WebServlet("*.do")
 public class MController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private boolean joinView = false;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		actionDo(request, response);
@@ -35,6 +36,14 @@ public class MController extends HttpServlet {
 			viewPage ="member/memberList.jsp";
 		}else if(command.equals("/memberJoinView.do")) {
 			viewPage ="member/memberJoin.jsp";
+			joinView = true;
+		}else if(command.equals("/memberJoin.do")) {
+			if(joinView) {
+				service = new MemberjoinService();
+				service.execute(request, response);
+				joinView = false;
+			}
+			viewPage = "memberList.do";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
