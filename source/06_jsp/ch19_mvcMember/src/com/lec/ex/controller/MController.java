@@ -1,6 +1,8 @@
 package com.lec.ex.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,7 @@ import com.lec.ex.service.*;
 @WebServlet("*.do")
 public class MController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private boolean join = false;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		actionDo(request, response);
@@ -23,21 +26,30 @@ public class MController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		actionDo(request, response);
 	}
-	private void actionDo(HttpServletRequest request, HttpServletResponse response) {
+	private void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();
 		String command = uri.substring(conPath.length());
-		String viewPath = null;
+		String viewPage = null;
 		Service service = null;
 		if(command.equals("/joinView.do")) {
+			viewPage = "member/join.jsp";
+		}else if(command.equals("/join.do")) {			
 			service = new MJoinService();
 			service.execute(request, response);
-			viewPath = "member/join.jsp";
-		}else if(command.equals("/join.do")) {
-			service = new MJoinService();
+			viewPage = "member/login.jsp";
+		}else if(command.equals("/loginView.do")) {
+			viewPage = "member/login.jsp";
+		}else if(command.equals("/login.do")) {
+			service = new MLoginService();
 			service.execute(request, response);
-			viewPath = "member/join.jsp";
+			viewPage = "member/main.jsp";
+		}else if(command.equals("/logout.do")) {
+			service = new MLogoutervice();
+			service.execute(request, response);
+			viewPage = "loginView.do";
 		}
+		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+		dispatcher.forward(request, response);
 	}
-
 }

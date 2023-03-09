@@ -11,6 +11,6 @@
 	<link href="${conPath}/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<%response.sendRedirect("main.do"); %>
+	<%response.sendRedirect("member/main.jsp"); %>
 </body>
 </html>

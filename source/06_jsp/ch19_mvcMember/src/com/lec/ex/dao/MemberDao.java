@@ -32,6 +32,35 @@ public class MemberDao {
 			System.out.println(e.getMessage());
 		}
 	}
+	public int checkId(String mid) {
+		int result = FAIL;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT COUNT(*) CNT FROM MVC_MEMBER WHERE MID=?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mid);
+			rs = pstmt.executeQuery();
+			rs.next();
+			int cnt = rs.getInt(1);
+			if(cnt==0) {
+				result = SUCCESS;
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+				if(rs!=null) rs.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return result;
+	}
 	public int join(MemberDto dto) {
 		int result = FAIL;
 		Connection conn = null;
@@ -56,35 +85,6 @@ public class MemberDao {
 			try {
 				if(pstmt!=null) pstmt.close();
 				if(conn!=null) conn.close();
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
-			}
-		}
-		return result;
-	}
-	public int checkId(String mid) {
-		int result = FAIL;
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "SELECT COUNT(*) CNT FROM MVC_MEMBER WHERE MID=?";
-		try {
-			conn = ds.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, mid);
-			rs = pstmt.executeQuery();
-			rs.next();
-			int cnt = rs.getInt(1);
-			if(cnt==0) {
-				result = SUCCESS;
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}finally {
-			try {
-				if(pstmt!=null) pstmt.close();
-				if(conn!=null) conn.close();
-				if(rs!=null) rs.close();
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());
 			}
@@ -126,7 +126,7 @@ public class MemberDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT * FROM MVC_MEMBER WHERE MID=? AND MPW=?";
+		String sql = "SELECT * FROM MVC_MEMBER WHERE MID=?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -139,8 +139,7 @@ public class MemberDao {
 				 String mphoto = rs.getString("mphoto");
 				 Date mbirth = rs.getDate("mbirth");
 				 String maddress = rs.getString("maddress");
-				 Date mrdate = rs.getDate("mrdate");
-				 dto = new MemberDto(mid, mpw, mname, memail, mphoto, mbirth, maddress, mrdate);
+				 dto = new MemberDto(mid, mpw, mname, memail, mphoto, mbirth, maddress);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
