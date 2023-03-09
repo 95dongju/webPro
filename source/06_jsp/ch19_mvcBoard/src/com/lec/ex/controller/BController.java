@@ -49,6 +49,27 @@ public class BController extends HttpServlet {
 			service = new BContentService();
 			service.execute(request, response);
 			viewPage = "board/content_view.jsp";
+		}else if(command.equals("/modifyView.do")) {
+			service = new BModifyViewService();
+			service.execute(request, response);
+			viewPage = "board/modify_view.jsp";
+		}else if(command.equals("/modify.do")) {
+			service = new BModifyService();
+			service.execute(request, response);
+			//viewPage = "list.do"; // requestScope.modifyResult, param.pageNum ...
+			viewPage = "contentView.do";
+		}else if(command.equals("/delete.do")) {
+			service = new BDeleteService();
+			service.execute(request, response);
+			viewPage = "list.do";
+		}else if(command.equals("/replyView.do")) { // 답변글 쓰기 위한 view
+			service = new BReplyViewService();
+			service.execute(request, response);
+			viewPage = "board/reply_view.jsp"; // param.pageNum, requestScope.replyBoard(원글 정보)
+		}else if(command.equals("/reply.do")) { // db에 답변글 저장
+			service = new BReplyService();
+			service.execute(request, response);
+			viewPage = "list.do"; // param.pageNum, ... requestScope.replyResult
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

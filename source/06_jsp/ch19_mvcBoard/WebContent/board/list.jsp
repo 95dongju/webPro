@@ -19,6 +19,26 @@
 	<c:if test="${writeResult eq FAIL }">
 		<script>alert('글쓰기 실패');</script>
 	</c:if>
+	<c:if test="${modifyResult eq SUCCESS }">
+		<script>alert('수정 성공')</script>
+	</c:if>
+	<c:if test="${modifyResult eq FAIL }">
+		<script>
+			alert('수정 실패');
+			history.back();
+		</script>
+	</c:if>
+	<c:if test="${not empty deleteResult }">
+		<script>
+			alert('${deleteResult }');
+		</script>
+	</c:if>
+	<c:if test="${replyResult eq SUCCESS }">
+		<script>alert('${param.bid } 답변글 작성 성공');</script>
+	</c:if>
+	<c:if test="${replyResult eq FAIL }">
+		<script>alert('${param.bid } 답변글 작성 실패');</script>
+	</c:if>
 	<table>
 			<caption>게시판</caption>
 		<tr><td><a href="${conPath }/writeView.do">글쓰기</a></td></tr>
@@ -41,13 +61,13 @@
 								&nbsp; &nbsp;
 							</c:if>
 							<c:if test="${i eq dto.bindent}">
-							 └
+							  &nbsp; └
 							</c:if>
 						</c:forEach>
 						<a href="${conPath }/contentView.do?bid=${dto.bid }&pageNum=${pageNum }">
 							${dto.btitle }
 						</a>
-						<c:if test="${dto.bhit > 10 })">
+						<c:if test="${dto.bhit > 10 }">
 							<b> * </b>
 						</c:if>
 					</td>
