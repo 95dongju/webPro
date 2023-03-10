@@ -11,37 +11,45 @@
 	<link href="${conPath}/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<c:set var="SUCCESS" value="1"/>
-	<c:set var="FAIL" value="0"/>
-	<c:if test="${loginResult eq SUCCESS}">
+	<c:if test="${not empty loginErrorMsg }">
 		<script>
-			alert('${getMember.mname}님 환영합니다!');
+			alert('${loginErrorMsg}');
+			history.back();
+			//location.href = '${conPath }/loginView.do';
 		</script>
 	</c:if>
-	<c:if test="${loginResult eq FAIL}">
+	<c:if test="${not empty modifyResult }">
 		<script>
-			alert('아이디/비밀번호를 확인해 주세요');
+			alert('${modifyResult}');
+		</script>
+	</c:if>
+	<c:if test="${not empty modifyErrorMsg }">
+		<script>
+			alert('${modifyErrorMsg}');
 			history.back();
 		</script>
 	</c:if>
-	<c:if test="${joinResult eq SUCCESS}">
+	<c:if test="${not empty withdrawalResult }">
 		<script>
-			alert('환영합니다!');
+			alert('${withdrawalResult}');
 		</script>
 	</c:if>
-	<c:if test="${param.mid != null }">
+	<c:if test="${not empty member }">
 		<div>
-			<p>${getMember.mname }(${param.mid })님 어서오세요</p>
+			<p>${member.mname }(${member.mid })님 어서오세요</p>
 			<hr>
+			<button onclick="location.href='${conPath}/modifyView.do'">정보수정</button>
 			<button onclick="location.href='${conPath}/logout.do'">로그아웃</button>
+			<button onclick="location.href='${conPath}/allView.do'">전체회원보기</button>
 		</div>
 	</c:if>
-	<c:if test="${param.mid eq null }">
+	<c:if test="${empty member }">
 		<div>
 			<p>로그인 상태가 아닙니다</p>
 			<hr>
 			<button onclick="location.href='${conPath}/loginView.do'">로그인</button>
 			<button onclick="location.href='${conPath}/joinView.do'">회원가입</button>
+			<button onclick="location.href='${conPath}/allView.do'">전체회원보기</button>
 		</div>
 	</c:if>
 </body>

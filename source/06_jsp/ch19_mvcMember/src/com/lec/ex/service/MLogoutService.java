@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class MLogoutervice implements Service {
+public class MLogoutService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

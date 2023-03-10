@@ -10,11 +10,11 @@ CREATE TABLE MEMBER(
 );
 -- dummy data
 INSERT INTO MEMBER (ID, PW, NAME, BIRTH)
-    VALUES ('aaa','1','È«',TO_DATE('1999-12-12', 'YYYY-MM-DD'));
--- dao¿¡ ÇÊ¿äÇÑ query
--- 1. È¸¿ø ¸®½ºÆ®
+    VALUES ('aaa','1','í™',TO_DATE('1999-12-12', 'YYYY-MM-DD'));
+-- daoì— í•„ìš”í•œ query
+-- 1. íšŒì› ë¦¬ìŠ¤íŠ¸
 SELECT * FROM MEMBER;
--- 2. È¸¿ø °¡ÀÔ
+-- 2. íšŒì› ê°€ìž…
 INSERT INTO MEMBER (ID, PW, NAME, BIRTH)
-    VALUES ('bbb','1','°­','1990-10-21');
+    VALUES ('bbb','1','ê°•','1990-10-21');
 COMMIT;
