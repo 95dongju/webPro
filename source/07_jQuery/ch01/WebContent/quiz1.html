@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table td {width:100px; height:100px; background-color: #AAFFAA;}
+		.tdRed {background-color: red;}
+		.img {background-image: url('img/dduk.jpg');
+				background-size: cover;}
+		p{width:300px; text-align:center;}
+		
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		var ddukIdx = parseInt(Math.random()*9);
+		$(document).ready(function(){
+			//jQuery
+			$('td').each(function(idx, item){
+				$('#answer').html('떡을 찾아보세요');
+				$(this).click(function(){
+					$('td').removeClass('tdRed');
+					$(this).addClass('tdRed');
+					if(ddukIdx == idx){
+						$(this).addClass('img');
+						$('#answer').html('정답입니다.');
+					}else{
+						$('#answer').html('틀렸어요. 정답은 ' +ddukIdx);
+					}
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<table>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+	<p id="answer"></p>
+</body>
+</html>

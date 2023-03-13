@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<style>
+		
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('p#msg').html('<b>Hello, jQuery</b>');
+			//$('p#msg').text('<b>Hello, jQuery</b>');
+			//$('input[name="msg"]').val('Hello, JSP');
+			$('.msg').val('Hello, JSP');
+			$('button').click(function(){
+				// var pMsg = $('p#msg').html(); // <b>Hello, jQuery</b>
+				var pMsg = $('p#msg').text(); //Hello, jQuery
+				var inputMsg = $('input[name="msg"]').val().trim();
+				alert(pMsg + "\n" + inputMsg);
+			});
+		});
+	</script>
+</head>
+<body>
+	<p id="msg"></p>
+	<p>메시지 : <input type="text" name="msg" class="msg"></p>
+	<button>msg 경고창</button>
+</body>
+</html>

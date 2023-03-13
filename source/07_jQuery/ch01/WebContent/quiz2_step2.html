@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		p, h1 {text-align:center;}
+		
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//jQuery
+			/* 	1단계 : 더하기
+				2단계 : 연산자 랜덤 (사칙연산)
+				3단계 : 5개 문제 시간 체크 (5 문제를 count 처리) // 점수와 함께 문제 푼 시간을 출력 80점 / 24초
+			 */
+			var math = ['+', '-', '/', '*'];
+			var idx = Math.trunc(Math.random()*4);
+		 	$('input[name="n1"]').val(Math.trunc(Math.random()*9)+1);
+			$('input[name="n2"]').val(Math.trunc(Math.random()*9)+1);
+			$('#arith').html(math[idx]);
+			$('#cal').click(function(){
+				var n1 = Number($('input[name="n1"]').val());
+				var n2 = Number($('input[name="n2"]').val());
+				var answer =  Number($('input[name="answer"]').val());
+				if(idx == 0){
+					var n3 = n1 + n2;
+				}else if(idx == 1){
+					var n3 = n1 - n2;
+				}else if(idx == 2){
+					var n3 = n1 / n2;
+				}else if(idx == 3){
+					var n3 = n1 * n2;
+				}
+				if(n3 == answer){
+					$('.result').html('정답입니다');
+				}else if (answer == ""){
+					$('.result').html('답을 입력하세요');
+				}else {
+					$('.result').html('틀렸습니다. 정답은 ' +(n3));
+				}
+			});
+			$('#reset').click(function(){
+				location.reload();
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>
+		<input type="text" name="n1" size="5" readonly="readonly">
+		<b id="arith"></b>
+		<input type="text" name="n2" size="5" readonly="readonly">
+		=
+		<input type="text" placeholder="답" name="answer" size="5">
+	</p>
+	<p>
+		<button id="reset">다시하기</button>
+		<button id="cal">채점하기</button>
+	</p>
+	<h1 class="result"></h1>
+</body>
+</html>

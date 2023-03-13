@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<style>
+		
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var array= [{name: '가메출판사', 'link' : 'http://www.kame.co.kr'},
+						{name: '네이버', 'link' : 'http://www.naver.com'},
+						{name: '다음', 'link' : 'http://www.daum.net'},
+						{name: '구글', 'link' : 'http://www.google.co.kr'}];
+			array.forEach(function(item, idx){
+				document.body.innerHTML += '<h2><a href="'+item.link+'">'+idx+'. '+item.name+'</a></h2>';
+			});
+			document.body.innerHTML += '<hr>';
+			$(array).each(function(idx, item){
+				$('body').html($('body').html() + '<h2><a href="'+item.link+'">'+idx+'. '+item.name+'</a></h2>');
+			});
+			$('body').html($('body').html() + '<hr>');
+			$.each(array, function(idx, item){
+				$('body').html($('body').html() + '<h2><a href="'+item.link+'">'+idx+'. '+item.name+'</a></h2>');
+			});
+		});
+	</script>
+</head>
+<body>
+	<!-- <h2><a href="http://www.kame.co.kr>가메출판사</a></h2> -->
+</body>
+</html>

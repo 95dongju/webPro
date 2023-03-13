@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<style>
+		
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//jQuery
+			$('img').mousedown(function(){
+				$(this).attr('src', 'img/but2.gif');
+				$(this).attr('alt', '클릭 후');
+			});
+			$('img').mouseup(function(){
+				$(this).attr('src', 'img/but1.gif');
+				$(this).attr('alt', '클릭 전');
+			});
+		});
+	</script>
+</head>
+<body>
+	<img src="img/but1.gif" alt="클릭 전">
+	<img src="img/but1.gif" alt="클릭 전">
+	<img src="img/but1.gif" alt="클릭 전">
+	<img src="img/but1.gif" alt="클릭 전">
+	<img src="img/but1.gif" alt="클릭 전">
+</body>
+</html>

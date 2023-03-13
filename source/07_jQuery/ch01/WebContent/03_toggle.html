@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		div#toggle {width:100px; height:100px; line-height:100px; text-align:center; background-color:red;}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//jQuery
+			$('.goShow').click(function(){
+				$('div#toggle').show();
+			});
+			$('.goHide').click(function(){
+				$('div#toggle').hide('fast');
+			});
+			$('button').click(function(){
+				$('div#toggle').toggle();
+				/* //div#toggle이 show->hide / hide->show
+				var toggle = 1;
+				if(toggle == 1){
+					$('div#toggle').hide();
+					toggle = 0;
+				}else{
+					$('div#toggle').show();
+					toggle = 1;
+				} */
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>토글링</button>
+	<h1 class="goShow">show</h1>
+	<h1 class="goHide">hide</h1>
+	<div id="toggle"><b>토글</b></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+	$(document).ready(function(){
+		// jQuery 문법 : window.onload = window가 onload 되었을 때 실행
+		$("*").css('color','blue').css('margin', '20px');
+		//$("*").css('color','blue');
+		//$("*").css('margin', '20px');
+		$('p').click(function(){
+			$(this).hide(); // display:none;
+		});
+		$('#showPtag').click(function(){
+			$('p').show();
+		});
+		$('#hideP1').click(function(){
+			$('p#p1').hide();
+		});
+		$('button#hidePtag').click(function(){
+			$('p').hide();
+		});
+	});
+	
+	// $(function(){});
+</script>
+</head>
+<body>
+	<h1>이곳은 heading</h1>
+	<p>이 p태그를 클릭하면 숨겨짐</p>
+	<p>이 p태그를 클릭하면 숨겨짐</p>
+	<p id="p1">p1 태그 하나만 숨겨짐</p>
+	<button id="showPtag">p태그 나타남</button>
+	<button id="hideP1">p1 숨김 버튼</button>
+	<button id="hidePtag">p태그 숨김 버튼</button>
+</body>
+</html>

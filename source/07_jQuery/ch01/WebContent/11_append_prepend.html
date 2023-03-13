@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<style>
+		.red {color:red;}
+		.blue {color:blue;}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//jQuery
+			var h1Cnt = 0;
+			$('#h1').click(function(){
+				h1Cnt++;
+				if(h1Cnt < 6){
+					$(this).append('<span class="red">♥</span>');
+				}else{
+					// 클릭 횟수가 6번째면 click 이벤트 제거
+					$(this).off();
+				}
+			});
+			$('#h2').click(function(){
+				$(this).append('<span class="red">♥</span>');
+				$(this).prepend('<span class="blue">♥</span>');
+			});
+			setInterval(()=>{ // 첫번째 매개변수에 콜백함수, 두번째 매개변수에 밀리세컨
+				// 2초마다 강제 이벤트 발생
+				$('h1').first().trigger('click');
+			}, 1000);
+		});
+	</script>
+</head>
+<body>
+	<h1 id="h1">start1 (5회까지) : </h1>
+	<h1 id="h2">start2 : </h1>
+</body>
+</html>

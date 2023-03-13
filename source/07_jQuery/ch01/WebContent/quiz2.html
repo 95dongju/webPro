@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		p {text-align:center;}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//jQuery
+			$('input[name="n1"]').val(Math.trunc(Math.random()*10));
+			$('input[name="n2"]').val(Math.trunc(Math.random()*10));
+			var n1 = Number($('input[name="n1"]').val());
+			var n2 = Number($('input[name="n2"]').val());
+			var answer =  Number($('input[name="answer"]').val());
+			$()
+		});
+	</script>
+</head>
+<body>
+	<p>
+		<input type="text" name="n1" size="5" readonly="readonly">
+		+
+		<input type="text" name="n2" size="5" readonly="readonly">
+		=
+		<input type="text" name="answer" size="5" placeholder="답">
+	</p>
+</body>
+</html>
