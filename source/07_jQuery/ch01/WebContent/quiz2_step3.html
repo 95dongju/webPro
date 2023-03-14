@@ -16,7 +16,7 @@
 				3단계 : 5개 문제 시간 체크 (5 문제를 count 처리) // 점수와 함께 문제 푼 시간을 출력 80점 / 24초
 			 */
 			var math = ['+', '-', '/', '*'];
-		 	$('input[name^="n"]').each(function(idx, item){
+		 	$('input[class^="n"]').each(function(idx, item){
 		 		var i = Math.trunc(Math.random()*9)+1;
 		 		$(this).val(i);
 		 	});
@@ -32,39 +32,39 @@
 </head>
 <body>
 	<p>
-		<input type="text" name="n1" size="5" readonly="readonly">
-		<b class="arith"></b>
-		<input type="text" name="n2" size="5" readonly="readonly">
+		<input type="text" class="n1" size="5" readonly="readonly">
+		<span class="arith"></span>
+		<input type="text" class="n2" size="5" readonly="readonly">
 		=
 		<input type="text" placeholder="답" name="answer1" size="5">
 	</p>
 	<p>
-		<input type="text" name="n3" size="5" readonly="readonly">
-		<b class="arith"></b>
-		<input type="text" name="n4" size="5" readonly="readonly">
+		<input type="text" class="n1" size="5" readonly="readonly">
+		<span class="arith"></span>
+		<input type="text" class="n2" size="5" readonly="readonly">
 		=
-		<input type="text" placeholder="답" name="answer2" size="5">
+		<input type="text" placeholder="답" name="answer1" size="5">
 	</p>
 	<p>
-		<input type="text" name="n5" size="5" readonly="readonly">
-		<b class="arith"></b>
-		<input type="text" name="n6" size="5" readonly="readonly">
+		<input type="text" class="n1" size="5" readonly="readonly">
+		<span class="arith"></span>
+		<input type="text" class="n2" size="5" readonly="readonly">
 		=
-		<input type="text" placeholder="답" name="answer3" size="5">
+		<input type="text" placeholder="답" name="answer1" size="5">
 	</p>
 	<p>
-		<input type="text" name="n7" size="5" readonly="readonly">
-		<b class="arith"></b>
-		<input type="text" name="n8" size="5" readonly="readonly">
+		<input type="text" class="n1" size="5" readonly="readonly">
+		<span class="arith"></span>
+		<input type="text" class="n2" size="5" readonly="readonly">
 		=
-		<input type="text" placeholder="답" name="answer4" size="5">
+		<input type="text" placeholder="답" name="answer1" size="5">
 	</p>
 	<p>
-		<input type="text" name="n9" size="5" readonly="readonly">
-		<b class="arith"></b>
-		<input type="text" name="n10" size="5" readonly="readonly">
+		<input type="text" class="n1" size="5" readonly="readonly">
+		<span class="arith"></span>
+		<input type="text" class="n2" size="5" readonly="readonly">
 		=
-		<input type="text" placeholder="답" name="answer5" size="5">
+		<input type="text" placeholder="답" name="answer1" size="5">
 	</p>
 	<p>
 		<button id="reset">다시하기</button>

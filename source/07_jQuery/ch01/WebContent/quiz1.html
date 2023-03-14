@@ -24,6 +24,7 @@
 					if(ddukIdx == idx){
 						$(this).addClass('img');
 						$('#answer').html('정답입니다.');
+						$('td').off();
 					}else{
 						$('#answer').html('틀렸어요. 정답은 ' +ddukIdx);
 					}

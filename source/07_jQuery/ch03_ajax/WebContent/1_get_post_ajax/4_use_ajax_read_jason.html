@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//jQuery
+			$.ajax({
+				url: 'ex.json',
+				dataType: 'json',
+				success: function(data){ // data는 객체배열 (id, name, price, description)
+					var out = '<tr><th>ID</th><th>name</th><th>price</th><th>description</th><tr>';
+					$.each(data, function(idx, item){
+						out += '<tr>';
+						out += '<td>' + item.id + '</td>';
+						out += '<td>' + item.name + '</td>';
+						out += '<td>' + item.price + '</td>';
+						out += '<td>' + item.description + '</td>';
+						out += '</tr>';
+					});
+					$('table#dataShow').html(out);
+				},
+			});
+		});
+	</script>
+</head>
+<body>
+	<table id="dataShow">
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+</body>
+</html>
