@@ -48,12 +48,10 @@ public class JoinService implements Service {
 				mbirth = Date.valueOf(mbirthStr);
 			}
 			String maddress = mRequest.getParameter("maddress");
-			String mrdateStr = mRequest.getParameter("mrdate");
-			Timestamp mrdate = Timestamp.valueOf(mrdateStr);
 			MemberDao mDao = MemberDao.getInstance();
 			result = mDao.midConfirm(mid);
 			if(result == MemberDao.NONEXISTENT) {
-				MemberDto member = new MemberDto(mid, mpw, mname, memail, mphoto, mbirth, maddress, mrdate);
+				MemberDto member = new MemberDto(mid, mpw, mname, memail, mphoto, mbirth, maddress, null);
 				result = mDao.joinMember(member);
 				if(result == MemberDao.SUCCESS) {
 					HttpSession session = request.getSession();

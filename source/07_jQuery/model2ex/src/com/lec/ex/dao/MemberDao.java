@@ -68,6 +68,36 @@ public class MemberDao {
 		}
 		return result;
 	}
+	// (1) 회원 이메일 중복체크
+	public int memailConfirm(String memail) {
+		int result = EXISTENT;
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		String sql = "SELECT * FROM MVC_MEMBER WHERE mEmail=?";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memail);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = EXISTENT;
+			}else {
+				result = NONEXISTENT;
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			try {
+				if(rs    != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn  != null) conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return result;
+	}
 	// (2) 회원가입 
 	public int joinMember(MemberDto member) {
 		int result = FAIL;
@@ -268,6 +298,8 @@ public class MemberDao {
 	// (8) 회원탈퇴
 	public int withdrawMember(String mid) {
 		int result = FAIL;
+		BoardDao bDao = new BoardDao();
+		bDao.deleteAll(mid);		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "DELETE FROM MVC_MEMBER WHERE MID = ?";

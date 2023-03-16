@@ -47,6 +47,31 @@ public class Controller extends HttpServlet {
 		}else if(command.equals("/join.do")) {
 			service = new JoinService();
 			service.execute(request, response);
+			viewPage = "/loginView.do";
+		}else if(command.equals("/logout.do")) {
+			service = new MLogoutService();
+			service.execute(request, response);
+			viewPage = "main/main.jsp";
+		}else if(command.equals("/midConfirm.do")) {
+			service = new MidConfirmService();
+			service.execute(request, response);
+			viewPage = "member/midConfirm.jsp";
+		}else if(command.equals("/memailConfirm.do")) {
+			service = new MemailConfirmService();
+			service.execute(request, response);
+			viewPage = "member/memailConfirm.jsp";
+		}else if(command.equals("/modifyView.do")) {
+			viewPage = "member/modify.jsp";
+		}else if(command.equals("/modify.do")) {
+			service = new MModifyService();
+			service.execute(request, response);
+			viewPage = "main/main.jsp";
+		}else if(command.equals("/withdrawal.do")) {
+			service = new MWithdrawalService();
+			service.execute(request, response);
+			viewPage = "main/main.jsp";
+		}else if(command.equals("/boardList.do")) {
+			viewPage = "fileboard/boardList.jsp";
 		}
 			// admin 요청
 		else if(command.equals("/adminLoginView.do")) {
@@ -54,9 +79,18 @@ public class Controller extends HttpServlet {
 		}else if(command.equals("/adminLogin.do")) {
 			service = new ALoginService();
 			service.execute(request, response);
-			viewPage = "";
+			viewPage = "main/main.jsp";
+		}else if(command.equals("/adminLogin.do")) {
+			service = new ALoginService();
+			service.execute(request, response);
+			viewPage = "main/main.jsp";
 		}
-			// fileboard 요청
+			// fileboard
+		else if(command.equals("/boardWrite.do")) {
+			service = new BoardWriteService();
+			service.execute(request, response);
+			viewPage = "fileboard/boardWrite.jsp";
+		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}

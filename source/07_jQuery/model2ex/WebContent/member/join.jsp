@@ -27,6 +27,66 @@
 				showOtherMonths: true,
 				yearRange: 'c-70:c+0'
 	    });
+	    $('#mid').keyup(function(){
+	    	var mid = $(this).val();
+	    	if(mid.length<2){
+	    		$('#midConfirm').text('2글자 이상 입력해 주세요');
+	    	}else{
+	    		$.ajax({
+	    			url: '${conPath}/midConfirm.do',
+	    			type: 'get',
+	    			data: 'mid='+mid,
+	    			dataType: 'html',
+	    			success: function(data){
+	    				$('#midConfirm').html(data);
+	    			},
+	    		});
+	    	}
+	    });
+	    $('#mpw, #mpwChk').keyup(function(){
+	    	var mpw = $('#mpw').val();
+	    	var mpwChk = $('#mpwChk').val();
+	    	if(mpw == mpwChk){
+	    		$('#mpwConfirm').text('비밀번호 일치');
+	    	}else{
+	    		$('#mpwConfirm').text('비밀번호 불일치');
+	    	}
+	    });
+	    $('#memail').keyup(function(){
+	    	var memail = $(this).val();
+	    	function isEmail(memail) {
+	    		var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+	    		return regExp.test(memail);
+	    	}
+	    	if(isEmail(memail) == false){
+	    		$('#memailConfirm').text('올바른 이메일 주소를 입력해 주세요');
+	    	}else{
+	    		$.ajax({
+	    			url: '${conPath}/memailConfirm.do',
+	    			type: 'get',
+	    			data: 'memail='+memail,
+	    			dataType: 'html',
+	    			success: function(data){
+	    				$('#memailConfirm').html(data);
+	    			}
+	    		});
+	    	}
+	    });
+	    $('form').submit(function(){
+	    	var midConfirm = $('#midConfirm').text().trim();
+	    	var mpwConfirm = $('#mpwConfirm').text().trim();
+	    	var memailConfirm = $('#memailConfirm').text().trim();
+	    	if(midConfirm != '사용 가능한 아이디입니다'){
+	    		alert('ID를 확인해 주세요');
+	    		return false;
+	    	}else if(mpwConfirm != '비밀번호 일치'){
+	    		alert('비밀번호를 확인해 주세요');
+	    		return false;
+	    	}else if(memailConfirm != '사용 가능한 이메일입니다'){
+	    		alert('이메일을 확인해 주세요');
+	    		return false;
+	    	}
+	    });
 	  });
   </script>
 </head>
@@ -38,37 +98,37 @@
 			<tr>
 				<th>아이디</th>
 				<td>
-					<input type="text" name="mid" id="mid">
+					<input type="text" name="mid" id="mid" required="required">
 					<br>
-					<span> &nbsp; &nbsp;&nbsp; </span>
+					<div id="midConfirm"> &nbsp; &nbsp; &nbsp; </div>
 				</td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
 				<td>
-					<input type="password" name="mpw" id="mpw">
+					<input type="password" name="mpw" id="mpw" required="required">
 				</td>
 			</tr>
 			<tr>
 				<th>비밀번호 확인</th>
 				<td>
-					<input type="password" name="mpwChk" id="mpwChk">
+					<input type="password" name="mpwChk" id="mpwChk" required="required">
 					<br>
-					<span> &nbsp; &nbsp;&nbsp; </span>
+					<div id="mpwConfirm"> &nbsp; &nbsp; &nbsp; </div>
 				</td>
 			</tr>
 			<tr>
 				<th>이름</th>
 				<td>
-					<input type="text" name="mname" id="mname">
+					<input type="text" name="mname" id="mname" required="required">
 				</td>
 			</tr>
 			<tr>
 				<th>메일</th>
 				<td>
-					<input type="text" name="memail" id="memail">
+					<input type="text" name="memail" id="memail" required="required">
 					<br>
-					<span> &nbsp; &nbsp;&nbsp; </span>
+					<div id="memailConfirm"> &nbsp; &nbsp; &nbsp; </div>
 				</td>
 			</tr>
 			<tr>
