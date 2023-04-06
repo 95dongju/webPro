@@ -10,8 +10,6 @@
 	<link href="${conPath }/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<h3>board의 write.jsp 페이지입니다</h3>
-	<hr>
-	<h3><span onclick="history.back()">이전 페이지로 가기</span></h3>
+	<jsp:forward page="input.do"/>
 </body>
 </html>
