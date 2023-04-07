@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import com.lec.ch11.service.BDeleteService;
 import com.lec.ch11.service.BListService;
 import com.lec.ch11.service.BModifyReplyViewService;
 import com.lec.ch11.service.BModifyService;
+import com.lec.ch11.service.BReplyService;
 import com.lec.ch11.service.BWriteService;
 import com.lec.ch11.service.Service;
 
@@ -83,6 +85,20 @@ public class MvcBoardController {
 	public String delete(int bid, Model model) {
 		model.addAttribute("bid", bid);
 		bservice = new BDeleteService();
+		bservice.execute(model);
+		return "forward:list.do";
+	}
+	@RequestMapping(value="reply", method=RequestMethod.GET)
+	public String reply(int bid, Model model) {
+		model.addAttribute("bid", bid);
+		bservice = new BModifyReplyViewService();
+		bservice.execute(model);
+		return "mvcBoard/reply";
+	}
+	@RequestMapping(value="reply", method=RequestMethod.POST)
+	public String reply(BoardDto boardDto, HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		bservice = new BReplyService();
 		bservice.execute(model);
 		return "forward:list.do";
 	}

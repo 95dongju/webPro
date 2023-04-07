@@ -39,6 +39,7 @@ public class BListService implements Service {
 		model.addAttribute("startPage", startPage);
 		model.addAttribute("endPage", endPage);
 		model.addAttribute("pageCnt", pageCnt);
+		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("BLOCKSIZE", BLOCKSIZE);
 		model.addAttribute("currentPage", currentPage);
 	}
