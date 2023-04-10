@@ -10,6 +10,8 @@
 	<link href="${conPath }/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<jsp:forward page="emp.do"/>
+	<c:forEach var="dept" items="${deptList }">
+		${dept }
+	</c:forEach><br><br>
 </body>
 </html>

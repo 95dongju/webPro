@@ -1,4 +1,4 @@
-package com.lec.ch14.vo;
+package com.lec.ch14.dto;
 
 import lombok.Data;
 
