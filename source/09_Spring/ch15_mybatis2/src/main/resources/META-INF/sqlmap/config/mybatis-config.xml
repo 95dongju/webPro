@@ -5,8 +5,10 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.lec.ch15.model.Dept" alias="Dept"/>
+		<typeAlias type="com.lec.ch15.model.Emp" alias="Emp"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="META-INF/sqlmap/mappers/Dept.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/Emp.xml"/>
 	</mappers>
 </configuration>
