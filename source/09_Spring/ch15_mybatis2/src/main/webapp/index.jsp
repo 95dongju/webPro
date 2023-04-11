@@ -6,8 +6,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="${conPath }/css/style.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+		});
+	</script>
 </head>
 <body>
-	<jsp:forward page="emp.do"/>
+	<jsp:forward page="home.do"/>
 </body>
 </html>
