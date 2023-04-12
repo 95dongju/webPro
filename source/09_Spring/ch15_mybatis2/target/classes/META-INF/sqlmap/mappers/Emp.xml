@@ -41,7 +41,7 @@
 	</insert>
 	<update id="update" parameterType="Emp">
 		UPDATE EMP SET ENAME = #{ename},
-	                JOB = #{job}',
+	                JOB = #{job},
 	                MGR = #{mgr},
 	                HIREDATE = #{hiredate},
 	                SAL = #{sal},

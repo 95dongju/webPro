@@ -11,16 +11,31 @@
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			
+			$('tr').click(function(){
+				let empno = Number($(this).children().eq(0).text().trim());
+				if(! isNaN(empno)){
+					location.href='${conPath}/detail.do?empno='+empno+'&pageNum=${paging.currentPage}';
+				}
+			});
 		});
+		const trClicked = empno=>{
+			// 해당 사원번호의 상세보기 페이지로 이동
+			location.href='${conPath}/detail.do?empno='+empno+'&pageNum=${paging.currentPage}';
+		};
 	</script>
 </head>
 <body>
+	<c:set var="success" value="1"/>
+	<c:if test="${deleteResult eq success }">
+		<script>
+			alert('성공적으로 삭제되었습니다.');
+		</script>
+	</c:if>
 	<table>
 		<caption>직원목록</caption>
 		<tr>
 			<td colspan="5">
-				<a href="${conPath }/writeForm.do">직원 등록</a>
+				<a href="${conPath }/writeView.do">직원 등록</a>
 			</td>
 		</tr>
 		<tr>
@@ -32,7 +47,7 @@
 		</tr>
 		</c:if>
 		<c:forEach items="${empDeptList }" var="empDept">
-			<tr>
+			<tr onclick="trClicked(${empDept.empno })">
 				<td>${empDept.empno }</td>
 				<td>${empDept.ename }</td>
 				<td>${empDept.job }</td>

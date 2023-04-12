@@ -1,6 +1,7 @@
 package com.lec.ch15.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import lombok.Data;
 
@@ -10,10 +11,10 @@ public class Emp {
 	private int empno;
 	private String ename;
 	private String job;
-	private int mgr;
+	private String mgr;
 	private Date hiredate;
 	private int sal;
-	private int comm;
+	private String comm;
 	private int deptno;
 	private String dname;
 	private String loc;
