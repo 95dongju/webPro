@@ -30,7 +30,7 @@ public class Paging {
 			endPage = pageCnt;
 		}
 	}
-	// Paing paging = new Paging(14, null);
+	// Paging paging = new Paging(14, null);
 	public Paging(int totCnt, String pageNum) {
 		if(pageNum!=null) {
 			currentPage = Integer.parseInt(pageNum); 

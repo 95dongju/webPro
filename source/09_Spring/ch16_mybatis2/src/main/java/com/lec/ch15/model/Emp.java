@@ -1,6 +1,5 @@
 package com.lec.ch15.model;
 
-
 import java.sql.Date;
 
 import lombok.Data;

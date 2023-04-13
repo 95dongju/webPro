@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.lec.ch11.dto.BoardDto" alias="BoardDto"/>
+		<typeAlias type="com.lec.ch17.dto.BoardDto" alias="BoardDto"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="META-INF/sqlmap/mappers/Board.xml"/>

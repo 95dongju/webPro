@@ -1,4 +1,4 @@
-package com.lec.ch11.dto;
+package com.lec.ch17.dto;
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;

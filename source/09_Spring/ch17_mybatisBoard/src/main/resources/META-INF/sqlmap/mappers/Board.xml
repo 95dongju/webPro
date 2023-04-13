@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lec.ch11.dao.BoardDao">
-	<resultMap type="Board" id="BoardResult">
+<mapper namespace="com.lec.ch17.dao.BoardDao">
+	<resultMap type="BoardDto" id="BoardResult">
 		<result property="bid" column="bid"/>
 		<result property="bname" column="bname"/>
 		<result property="btitle" column="btitle"/>
@@ -15,7 +15,7 @@
 		<result property="bindent" column="bindent"/>
 		<result property="bip" column="bip"/>
 	</resultMap>
-	<select id="boardList" parameterType="Board" resultMap="BoardResult">
+	<select id="boardList" parameterType="BoardDto" resultMap="BoardResult">
 		SELECT * 
 		  FROM (SELECT ROWNUM RN, A.* 
 		        FROM (SELECT * FROM MVC_BOARD ORDER BY BGROUP DESC, BSTEP) A)
@@ -24,27 +24,27 @@
 	<select id="boardTotCnt" resultType="int">
 		SELECT COUNT(*) FROM MVC_BOARD
 	</select>
-	<insert id="boardWrite" parameterType="Board">
+	<insert id="boardWrite" parameterType="BoardDto">
 		INSERT INTO MVC_BOARD (BID, BNAME, BTITLE, BCONTENT, BGROUP, BSTEP, BINDENT, BIP)
  			VALUES (MVC_BOARD_SEQ.NEXTVAL, #{bname},#{btitle}, #{bcontent}, MVC_BOARD_SEQ.CURRVAL, 0, 0, #{bip})
 	</insert>
 	<update id="boardHitUp" parameterType="int">
 		UPDATE MVC_BOARD SET bHIT = bHIT + 1 WHERE bID = #{bid}
 	</update>
-	<select id="boardDetail" parameterType="int" resultType="Board">
+	<select id="boardDetail" parameterType="int" resultType="BoardDto">
 		SELECT * FROM MVC_BOARD WHERE bID = #{bid}
 	</select>
-	<update id="boardReplyPreStep" parameterType="Board">
-		<![CDATA[
+	<update id="boardReplyPreStep" parameterType="BoardDto">
+		
 		UPDATE MVC_BOARD SET BSTEP = BSTEP + 1 
-				WHERE BGROUP = #{bground} AND BSTEP > #{bstep}
-		]]>
+				WHERE BGROUP = #{bgroup} AND BSTEP<![CDATA[ > ]]>#{bstep}
+		
 	</update>
-	<insert id="boardReply" parameterType="Board">
+	<insert id="boardReply" parameterType="BoardDto">
 		INSERT INTO MVC_BOARD (BID, BNAME, BTITLE, BCONTENT, BGROUP, BSTEP, BINDENT, BIP)
  			VALUES (MVC_BOARD_SEQ.NEXTVAL, #{bname},#{btitle}, #{bcontent}, #{bgroup}, #{bstep}+1, #{bindent}+1, #{bip})
 	</insert>
-	<update id="boardModify" parameterType="Board">
+	<update id="boardModify" parameterType="BoardDto">
 		UPDATE MVC_BOARD 
 		  SET BNAME = #{bname},
 		      BTITLE = #{btitle},
