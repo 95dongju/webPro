@@ -15,7 +15,7 @@
 		SELECT COUNT(*) FROM MEMBER WHERE MID = #{mid}
 	</select>
 	<insert id="joinMember" parameterType="Member">
-		INSERT INTO MEMBER VALUES (#{mid}, #{mpw}, #{mname}, #{mmail}, #{mpost}, #{maddress})
+		INSERT INTO MEMBER VALUES (#{mid}, #{mpw}, #{mname}, #{mmail}, #{mpost}, #{maddr})
 	</insert>
 	<select id="getDetailMember" resultType="Member" parameterType="String">
 		SELECT * FROM MEMBER WHERE MID = #{mid}
@@ -25,7 +25,7 @@
                     MNAME = #{mname},
                     MMAIL = {mmail},
                     MPOST = #{mpost},
-                    MADDR = #{maddress}
+                    MADDR = #{maddr}
                 WHERE MID = #{mid}
 	</update>
 </mapper>
