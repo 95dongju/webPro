@@ -1,6 +1,0 @@
-1. spring.id 사이트 -> sts-3.9.13 다운 후 압축 풀기 (압축폴더명 줄이기)
-2. lombok 다운 -> 폴더 cmd창에서 java -jar lombok.jar -> sts.exe 추가
-3. lombok 설정 및 utf-8 인코딩 설정
-: STS.ini
-
--Dfile.encoding=utf-8
